@@ -94,7 +94,7 @@ Orion is an application built to be an one stop shop for all your tech shoppings
     * Detail Product View
 
 ## Wireframes
-<img src="https://github.com/myles-block/ProjectOrion/blob/main/Orion%20Wire-Frame.png" width=600>
+<img src="https://github.com/myles-block/ProjectOrion/blob/main/Orion%20Wire-Frame.png" width=1000>
 
 ### [BONUS] Digital Wireframes & Mockups
 
