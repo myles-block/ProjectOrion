@@ -98,7 +98,7 @@ Orion is an application built to be an one stop shop for all your tech shoppings
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="https://github.com/myles-block/capstone-projectone-Orion/blob/main/Orion%20WireFrame.pdf" width=600>
+<img src="https://github.com/myles-block/capstone-projectone-Orion/blob/main/Orion%20WireFrame.jpg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
