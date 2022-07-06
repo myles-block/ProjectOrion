@@ -14,11 +14,10 @@ Orion Official READ.ME
 Orion is an application built to be an one stop shop for all your tech shoppings.
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
 - **Category:** Shopping/Informational
 - **Mobile:** Mobile first experience
 - **Story:** 
-- **Market:**
+- **Market:** 
 - **Habit:** Could be used daily based on personal preference
 - **Scope:** Inital focus on displaying tech items that are categorized respectively
 
@@ -43,16 +42,14 @@ Orion is an application built to be an one stop shop for all your tech shoppings
 * Links to reviews of certain brands
 * Sign in with Google OAuth
 * Search by brand and specific filtering
-* ...
+* Implemented other store API's
 
 ### 2. Screen Archetypes
 
 * Login Screen
    * User can Login
-   * ...
 * Registration Screen
    * User can register account
-   * ...
 * Home Feed
     * Displays curated feed for User(including widgest of tech information)
 * News Feed
@@ -97,8 +94,7 @@ Orion is an application built to be an one stop shop for all your tech shoppings
     * Detail Product View
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="https://github.com/myles-block/capstone-projectone-Orion/blob/main/Orion%20WireFrame.jpg" width=600>
+<img src="https://github.com/myles-block/ProjectOrion/blob/main/Orion%20Wire-Frame.png" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
