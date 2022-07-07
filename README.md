@@ -14,10 +14,13 @@ Orion Official READ.ME
 Orion is an application built to be an one stop shop for all your tech shoppings.
 
 ### App Evaluation
-- **Category:** Shopping/Informational
+- **Category:** Informational/Shopping
 - **Mobile:** Mobile first experience
 - **Story:** 
-- **Market:** 
+  * Jack, an avid audiophile, checks Orion to see what headphones are out and decides when to buy a new pair
+  * Jill uses Orion as an introductory into the smartwatch ecosystem (deciding which smartwatch is the best fit for her) to aid her fitness endeavors
+  * Jason being the tech savy person he is uses Orion to stay up to date on what tech items are out on the market
+- **Market:** People who use tech daily or are interested in buying tech items, young or old
 - **Habit:** Could be used daily based on personal preference
 - **Scope:** Inital focus on displaying tech items that are categorized respectively
 
@@ -38,6 +41,7 @@ Orion is an application built to be an one stop shop for all your tech shoppings
 **Optional Nice-to-have Stories**
 
 * Push notifications on new releases
+* Users get a curated feed of brands they like based on favorites and bookmarks
 * 3rd Party Articles on popular brands
 * Links to reviews of certain brands
 * Sign in with Google OAuth
@@ -101,9 +105,20 @@ Orion is an application built to be an one stop shop for all your tech shoppings
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
+
 ### Models
 [Add table of models]
+- Product:
+| Property     | Type      | Description     |
+| ------------- | ------------- | -------- |
+| type          | string         | type of tech of product  |
+| name           | string         | product name  |
+| brand           | string         | brand of technology  |
+| description     | string         | product description  |
+| brand           | string         | brand of technology  |
+| release date    | date         | when the item was relead |
+| image           | URL         | image of product  |
+
 ### Networking
 - API used
   * BestBuy: https://developer.bestbuy.com/apis
