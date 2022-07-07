@@ -107,8 +107,7 @@ Orion is an application built to be an one stop shop for all your tech shoppings
 ## Schema 
 
 ### Models
-[Add table of models]
-- Product:
+Product
 | Property     | Type      | Description     |
 | ------------- | ------------- | -------- |
 | type          | string         | type of tech of product  |
