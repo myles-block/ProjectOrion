@@ -105,7 +105,8 @@ Orion is an application built to be an one stop shop for all your tech shoppings
 ### Models
 [Add table of models]
 ### Networking
-- API used: https://developer.bestbuy.com/apis
+- API used
+  * BestBuy: https://developer.bestbuy.com/apis
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
