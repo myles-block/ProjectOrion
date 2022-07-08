@@ -137,4 +137,5 @@ List of network requests by screen
 
 **[OPTIONAL: Existing API Endpoints]**
 
-**BestBuy:** https://developer.bestbuy.com/apis
+**BestBuy API**
+- Base URL - https://developer.bestbuy.com/apis
