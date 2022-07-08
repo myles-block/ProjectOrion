@@ -20,6 +20,7 @@
 		F339B7ED2878DCF90048E229 /* OrionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F339B7EC2878DCF90048E229 /* OrionTests.m */; };
 		F339B7F72878DCF90048E229 /* OrionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F339B7F62878DCF90048E229 /* OrionUITests.m */; };
 		F339B7F92878DCF90048E229 /* OrionUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F339B7F82878DCF90048E229 /* OrionUITestsLaunchTests.m */; };
+		F37A794E2878E6FA00C765AF /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = F37A794D2878E6F900C765AF /* Keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		F339B7F22878DCF90048E229 /* OrionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F339B7F62878DCF90048E229 /* OrionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrionUITests.m; sourceTree = "<group>"; };
 		F339B7F82878DCF90048E229 /* OrionUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrionUITestsLaunchTests.m; sourceTree = "<group>"; };
+		F37A794D2878E6F900C765AF /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		FF9F1C5BF1C4B02D01CD42F5 /* Pods-Orion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orion.release.xcconfig"; path = "Target Support Files/Pods-Orion/Pods-Orion.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 				F339B7D92878DCF90048E229 /* Main.storyboard */,
 				F339B7DE2878DCF90048E229 /* LaunchScreen.storyboard */,
 				F339B7DC2878DCF90048E229 /* Assets.xcassets */,
+				F37A794D2878E6F900C765AF /* Keys.plist */,
 				F339B7E12878DCF90048E229 /* Info.plist */,
 				F339B7E22878DCF90048E229 /* main.m */,
 			);
@@ -308,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F37A794E2878E6FA00C765AF /* Keys.plist in Resources */,
 				F339B7E02878DCF90048E229 /* LaunchScreen.storyboard in Resources */,
 				F339B7DD2878DCF90048E229 /* Assets.xcassets in Resources */,
 				F339B7DB2878DCF90048E229 /* Main.storyboard in Resources */,
