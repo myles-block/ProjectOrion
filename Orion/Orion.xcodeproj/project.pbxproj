@@ -104,12 +104,9 @@
 		F339B7CF2878DCF80048E229 /* Orion */ = {
 			isa = PBXGroup;
 			children = (
-				F339B7D02878DCF80048E229 /* AppDelegate.h */,
-				F339B7D12878DCF80048E229 /* AppDelegate.m */,
-				F339B7D32878DCF80048E229 /* SceneDelegate.h */,
-				F339B7D42878DCF80048E229 /* SceneDelegate.m */,
-				F339B7D62878DCF80048E229 /* ViewController.h */,
-				F339B7D72878DCF90048E229 /* ViewController.m */,
+				F339B8072878DF5C0048E229 /* View Controllers */,
+				F339B8082878E0060048E229 /* API */,
+				F339B8092878E0350048E229 /* Delegates */,
 				F339B7D92878DCF90048E229 /* Main.storyboard */,
 				F339B7DC2878DCF90048E229 /* Assets.xcassets */,
 				F339B7DE2878DCF90048E229 /* LaunchScreen.storyboard */,
@@ -134,6 +131,33 @@
 				F339B7F82878DCF90048E229 /* OrionUITestsLaunchTests.m */,
 			);
 			path = OrionUITests;
+			sourceTree = "<group>";
+		};
+		F339B8072878DF5C0048E229 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F339B7D62878DCF80048E229 /* ViewController.h */,
+				F339B7D72878DCF90048E229 /* ViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F339B8082878E0060048E229 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F339B8092878E0350048E229 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				F339B7D12878DCF80048E229 /* AppDelegate.m */,
+				F339B7D02878DCF80048E229 /* AppDelegate.h */,
+				F339B7D32878DCF80048E229 /* SceneDelegate.h */,
+				F339B7D42878DCF80048E229 /* SceneDelegate.m */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
