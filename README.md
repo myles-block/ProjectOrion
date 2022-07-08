@@ -16,13 +16,10 @@ Orion is an application built to be an one stop shop for all your tech shoppings
 ### App Evaluation
 - **Category:** Informational/Shopping
 - **Mobile:** Mobile first experience
-- **Story:** 
-  * Jack, an avid audiophile, checks Orion to see what headphones are out and decides when to buy a new pair
-  * Jill uses Orion as an introductory into the smartwatch ecosystem (deciding which smartwatch is the best fit for her) to aid her fitness endeavors
-  * Jason being the tech savy person he is uses Orion to stay up to date on what tech items are out on the market
-- **Market:** People who use tech daily or are interested in buying tech items, young or old
-- **Habit:** Could be used daily based on personal preference
-- **Scope:** Inital focus on displaying tech items that are categorized respectively
+- **Story:** Displays current tech for the user in manner that shows them what is avalible, what to purchase, and background information.
+- **Market:** Any individual interested or shop for tech
+- **Habit:** This app can be used often or unoften daily based on the user's personal preference and involvement in tech.
+- **Scope:** Inital focus on displaying tech items that are categorized respectively, then to adding articles and reviews into a feed. Large potential for being truly a one stop shop for tech. 
 
 ## Product Spec
 
@@ -34,19 +31,22 @@ Orion is an application built to be an one stop shop for all your tech shoppings
 * Multiple views for different tech categories
 * Pull to refresh on different views
 * Filtering based on brands in certain views
-* Link to websites to buy
+* Prices for products
 * Collection View of Most Used Tech listed in categories
-* ...
 
 **Optional Nice-to-have Stories**
 
 * Push notifications on new releases
+* Add articles on homepage
 * Users get a curated feed of brands they like based on favorites and bookmarks
 * 3rd Party Articles on popular brands
 * Links to reviews of certain brands
 * Sign in with Google OAuth
+* Favoriting Products
 * Search by brand and specific filtering
 * Implemented other store API's
+* Link to websites to buy
+
 
 ### 2. Screen Archetypes
 
@@ -117,10 +117,24 @@ Product
 | brand           | string         | brand of technology  |
 | release date    | date         | when the item was relead |
 | image           | URL         | image of product  |
+| price           | integer         | price of product  |
+| bookmarked      | bool         | refs if a product is bookmarked or not|
 
 ### Networking
-- API used
-  * BestBuy: https://developer.bestbuy.com/apis
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+List of network requests by screen
+- Home Feed Screen
+  * (Read/GET) All trending products
+  * (Read/GET) All recommended products (based on implementation of stretch likes)
+- Details View
+  * (Read/GET) Grabs photo
+  * (Read/GET) Grabs description
+  * (Read/GET) Grabs price
+  * (Create/BOOKMARK) Creates a bookmark onto product
+  * (Delete) Deletes product bookmark
+  * (Read/GET) Grabs release date
+- Bookmarked View
+  * (Read/GET) Query all products where user has bookmarked item
+
+**[OPTIONAL: Existing API Endpoints]**
+
+**BestBuy:** https://developer.bestbuy.com/apis
