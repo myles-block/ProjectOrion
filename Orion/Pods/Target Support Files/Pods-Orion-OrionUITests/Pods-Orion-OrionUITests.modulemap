@@ -1,0 +1,6 @@
+framework module Pods_Orion_OrionUITests {
+  umbrella header "Pods-Orion-OrionUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
