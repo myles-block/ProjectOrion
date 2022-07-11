@@ -62,37 +62,12 @@
                     <connections>
                         <outlet property="passwordField" destination="izY-9X-isa" id="cAD-rR-707"/>
                         <outlet property="usernameField" destination="z6X-Q0-EQP" id="MlJ-QC-0kL"/>
-                        <segue destination="lGS-Vd-0HL" kind="presentation" identifier="loginSegue" id="xHD-FC-bpp"/>
+                        <segue destination="TeR-Eb-IQu" kind="presentation" identifier="loginSegue" id="A7D-rJ-UKx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="mZu-Vb-5l7">
-            <objects>
-                <viewController id="8aL-Rt-zmg" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0rs-uB-kzz">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AYO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZA-tI-bwn">
-                                <rect key="frame" x="175" y="318" width="55" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Z9u-4c-ABy"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="z8X-Tf-Toq"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g27-Ev-a5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2029" y="151"/>
+            <point key="canvasLocation" x="-66" y="-137"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="xLS-gd-B6R">
@@ -120,13 +95,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Orion..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bc8-gD-wUr">
-                                <rect key="frame" x="16" y="174" width="251" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOG-zf-Unw">
                                 <rect key="frame" x="137" y="404" width="116" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -137,6 +105,13 @@
                                     <action selector="registerUser:" destination="Mrv-cH-14Z" eventType="touchUpInside" id="maZ-Ky-YaQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Orion..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bc8-gD-wUr">
+                                <rect key="frame" x="16" y="174" width="251" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hqd-rN-TQs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -145,36 +120,81 @@
                         <outlet property="emailField" destination="aib-sj-xqA" id="SIM-1L-klW"/>
                         <outlet property="passwordField" destination="gvA-nI-Oy7" id="2If-kE-81G"/>
                         <outlet property="usernameField" destination="Fnl-ty-r1J" id="CuN-sH-n18"/>
-                        <segue destination="lGS-Vd-0HL" kind="presentation" identifier="loginSegue" id="McT-Eh-hr2"/>
+                        <segue destination="TeR-Eb-IQu" kind="presentation" identifier="loginSegue" id="gYJ-Vh-yar"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dF9-ad-725" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="848"/>
+            <point key="canvasLocation" x="-66" y="643"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Rld-Pe-rFf">
+            <objects>
+                <tabBarController storyboardIdentifier="TabFeedNavigation" modalPresentationStyle="fullScreen" id="TeR-Eb-IQu" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qxp-th-2Sc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="CJE-n9-o0C" kind="relationship" relationship="viewControllers" id="ssw-cM-hfX"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vcA-Ft-e2F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="908" y="255"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="X2r-Mi-OUU">
+            <objects>
+                <viewController id="CJE-n9-o0C" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xee-c0-Nqe">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Na2-Ce-LvG">
+                                <rect key="frame" x="113" y="262" width="33" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="l0f-z7-lAe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="square.and.arrow.up" catalog="system" id="rnm-JG-rwU"/>
+                    <navigationItem key="navigationItem" id="rve-Sz-L1p"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kcn-R9-Pnq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1855.3846153846152" y="254.50236966824644"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="WWT-Ob-vDj">
+        <scene sceneID="ppS-0c-koQ">
             <objects>
-                <navigationController storyboardIdentifier="HomeFeedNavigation" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="lGS-Vd-0HL" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8sD-io-1Tx" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Il-yq-vca">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="np3-HA-aBV">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8aL-Rt-zmg" kind="relationship" relationship="rootViewController" id="gGS-Fo-e9m"/>
+                        <segue destination="CJE-n9-o0C" kind="relationship" relationship="rootViewController" id="Mof-c5-QkS"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Bu-7T-Egv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y8V-vz-bZS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214" y="151"/>
+            <point key="canvasLocation" x="971" y="941"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xHD-FC-bpp"/>
+        <segue reference="ssw-cM-hfX"/>
+        <segue reference="gYJ-Vh-yar"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

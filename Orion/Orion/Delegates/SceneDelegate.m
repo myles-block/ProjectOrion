@@ -21,7 +21,7 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     if (PFUser.currentUser) {//if user is cached this code forces auto login straight into Home Feed
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeFeedNavigation"];//push to Navigation Controller of HomeFeed instead of view controller (this way bars pop up)
+            self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"TabFeedNavigation"];//push to Navigation Controller of HomeFeed instead of view controller (this way bars pop up)
         }
 }
 
