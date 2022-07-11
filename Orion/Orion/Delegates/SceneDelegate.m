@@ -6,6 +6,7 @@
 //
 
 #import "SceneDelegate.h"
+#import "Parse/Parse.h"
 
 @interface SceneDelegate ()
 
@@ -18,6 +19,10 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+    if (PFUser.currentUser) {//if user is cached this code forces auto login straight into Home Feed
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeFeedNavigation"];//push to Navigation Controller of HomeFeed instead of view controller (this way bars pop up)
+        }
 }
 
 
