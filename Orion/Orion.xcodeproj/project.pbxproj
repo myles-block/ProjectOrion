@@ -10,6 +10,7 @@
 		48C09D5D8C319743C9A4CD57 /* Pods_Orion_OrionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274E6963F93410C38DB3008D /* Pods_Orion_OrionUITests.framework */; };
 		593C0C0BC2F6D2262FEEA9B9 /* Pods_Orion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F158056955DD1F1A25F1C7F8 /* Pods_Orion.framework */; };
 		962406E9B1B3F99211BF2A8E /* Pods_OrionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E0DF0E8A227EB4E70DC2B1 /* Pods_OrionTests.framework */; };
+		F313D034287E17AA007C2874 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F313D033287E17AA007C2874 /* SettingsViewController.m */; };
 		F339B7D22878DCF80048E229 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F339B7D12878DCF80048E229 /* AppDelegate.m */; };
 		F339B7D52878DCF80048E229 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F339B7D42878DCF80048E229 /* SceneDelegate.m */; };
 		F339B7D82878DCF90048E229 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F339B7D72878DCF90048E229 /* LoginViewController.m */; };
@@ -51,6 +52,8 @@
 		C6648D2F6CC36F992CF140DE /* Pods-Orion-OrionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orion-OrionUITests.debug.xcconfig"; path = "Target Support Files/Pods-Orion-OrionUITests/Pods-Orion-OrionUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F053EAA99764D6EBB86D3DDF /* Pods-Orion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orion.debug.xcconfig"; path = "Target Support Files/Pods-Orion/Pods-Orion.debug.xcconfig"; sourceTree = "<group>"; };
 		F158056955DD1F1A25F1C7F8 /* Pods_Orion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F313D032287E17AA007C2874 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		F313D033287E17AA007C2874 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		F339B7CD2878DCF80048E229 /* Orion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F339B7D02878DCF80048E229 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F339B7D12878DCF80048E229 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 				F3C402DE287C98740061AC85 /* SignInViewController.m */,
 				F3A6B65B287CC8570014BA61 /* HomeFeedViewController.h */,
 				F3A6B65C287CC8570014BA61 /* HomeFeedViewController.m */,
+				F313D032287E17AA007C2874 /* SettingsViewController.h */,
+				F313D033287E17AA007C2874 /* SettingsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -458,6 +463,7 @@
 				F339B7D22878DCF80048E229 /* AppDelegate.m in Sources */,
 				F339B7E32878DCF90048E229 /* main.m in Sources */,
 				F339B7D52878DCF80048E229 /* SceneDelegate.m in Sources */,
+				F313D034287E17AA007C2874 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
