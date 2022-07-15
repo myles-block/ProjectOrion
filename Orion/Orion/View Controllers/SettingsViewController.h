@@ -10,6 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SettingsViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *selectedProfilePhotoImageView;
+
 
 @end
 

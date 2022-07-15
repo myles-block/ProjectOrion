@@ -25,7 +25,6 @@
 
 //MARK: BUTTON FUNCTIONS
 
-
 - (IBAction)backButton:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }
@@ -71,37 +70,40 @@
 
 
 
-//
-//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-//
-//    // Get the image captured by the UIImagePickerController
-//    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-////    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
-//
-//    // Do something with the images (based on your use case)
-//    originalImage = [self resizeImage:originalImage withSize:CGSizeMake(580, 580)];
-//
-//
-//    [self.selectedPhotoImageView setImage:originalImage];
-////    self.imgForPost = originalImage;
-//
-//    // Dismiss UIImagePickerController to go back to your original view controller
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
-//
-//- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
-//    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
-//
-//    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
-//    resizeImageView.image = image;
-//
-//    UIGraphicsBeginImageContext(size);
-//    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
-//    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//
-//    return newImage;
-//}
 
-//TODO: How to set a selected image to the user class listed in Back4App
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+
+    // Get the image captured by the UIImagePickerController
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+//    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+
+    // Do something with the images (based on your use case)
+    originalImage = [self resizeImage:originalImage withSize:CGSizeMake(580, 580)];
+
+    PFUser *current = [PFUser currentUser];
+    current[@"profilePicture"] = originalImage;
+    
+    [self.selectedProfilePhotoImageView setImage:originalImage];
+//    [PFUser currentUser]
+//    [self.selectedPhotoImageView setImage:originalImage];
+//    self.imgForPost = originalImage;
+
+    // Dismiss UIImagePickerController to go back to your original view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    return newImage;
+}
+
 @end
