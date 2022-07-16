@@ -147,58 +147,6 @@
             </objects>
             <point key="canvasLocation" x="908" y="-279"/>
         </scene>
-        <!--Bookmark-->
-        <scene sceneID="vsH-gy-icW">
-            <objects>
-                <viewController id="ofM-ef-8aB" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Swm-UU-9Ua">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bookmarks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcV-MR-hsQ">
-                                <rect key="frame" x="130" y="374" width="131" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="uu6-D8-Ipa"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Bookmark" image="bookmark.circle.fill" catalog="system" id="fJV-y0-XTz"/>
-                    <navigationItem key="navigationItem" id="na5-vP-iM2"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b6N-ti-SWJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2862" y="1140"/>
-        </scene>
-        <!--News-->
-        <scene sceneID="pFm-Jb-QzU">
-            <objects>
-                <viewController id="Pi6-SN-2qJ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="730-o6-HnM">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iW2-Iw-T4m">
-                                <rect key="frame" x="163" y="354" width="66" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="BW0-6h-Fr3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="News" image="newspaper.fill" catalog="system" id="dfx-0K-Hkt"/>
-                    <navigationItem key="navigationItem" id="05U-ic-77x"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OX6-gq-3ub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2862" y="455"/>
-        </scene>
         <!--Home-->
         <scene sceneID="X2r-Mi-OUU">
             <objects>
@@ -231,6 +179,84 @@
             </objects>
             <point key="canvasLocation" x="2808" y="-265"/>
         </scene>
+        <!--News-->
+        <scene sceneID="pFm-Jb-QzU">
+            <objects>
+                <viewController id="Pi6-SN-2qJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="730-o6-HnM">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iW2-Iw-T4m">
+                                <rect key="frame" x="163" y="354" width="66" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BW0-6h-Fr3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="News" image="newspaper.fill" catalog="system" id="dfx-0K-Hkt"/>
+                    <navigationItem key="navigationItem" id="05U-ic-77x"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OX6-gq-3ub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2862" y="455"/>
+        </scene>
+        <!--Bookmark-->
+        <scene sceneID="vsH-gy-icW">
+            <objects>
+                <viewController id="ofM-ef-8aB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Swm-UU-9Ua">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bookmarks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcV-MR-hsQ">
+                                <rect key="frame" x="130" y="374" width="131" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uu6-D8-Ipa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bookmark" image="bookmark.circle.fill" catalog="system" id="fJV-y0-XTz"/>
+                    <navigationItem key="navigationItem" id="na5-vP-iM2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b6N-ti-SWJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2862" y="1140"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="UbV-Tn-liX">
+            <objects>
+                <viewController id="MzW-Nr-llo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lmw-W7-Xfp">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89O-wd-BsC">
+                                <rect key="frame" x="154" y="406" width="82" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="j9Q-MI-25Z"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="y7W-kM-wBu"/>
+                    <navigationItem key="navigationItem" id="s3S-wb-hKl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="trU-JP-vb7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2862" y="1809"/>
+        </scene>
         <!--Profile-->
         <scene sceneID="414-f8-Pxl">
             <objects>
@@ -239,14 +265,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvy-wj-vny">
-                                <rect key="frame" x="94" y="110" width="203" height="192"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="uaY-gf-dCC" appends="YES" id="wY5-3C-Om9"/>
-                                </connections>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBJ-1f-yin">
                                 <rect key="frame" x="152" y="746" width="86" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -258,9 +276,19 @@
                                     <action selector="didTapLogout:" destination="Eul-As-gH0" eventType="touchUpInside" id="2RG-wH-XN4"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdW-la-roU">
+                                <rect key="frame" x="91" y="130" width="208" height="183"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemMintColor"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="dOK-AJ-sis" appends="YES" id="eZs-Xx-i2z"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qzc-ZB-RdY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="1xp-li-yvw">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="MxK-Gm-U1l">
@@ -276,17 +304,17 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="selectedProfilePhotoImageView" destination="lvy-wj-vny" id="734-59-dqo"/>
+                        <outlet property="selectedProfilePhotoImageView" destination="pdW-la-roU" id="hie-qW-V4i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5n-1q-UM5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="uaY-gf-dCC">
+                <tapGestureRecognizer id="dOK-AJ-sis">
                     <connections>
-                        <action selector="didTapSetProfilePicture:" destination="Eul-As-gH0" id="ZXM-2h-bub"/>
+                        <action selector="didTapSetProfilePicture:" destination="Eul-As-gH0" id="WzL-uc-3Tz"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4637" y="-265"/>
+            <point key="canvasLocation" x="4636.9230769230771" y="-265.16587677725119"/>
         </scene>
         <!--Item-->
         <scene sceneID="ppS-0c-koQ">
@@ -364,32 +392,6 @@
             </objects>
             <point key="canvasLocation" x="1911" y="1140"/>
         </scene>
-        <!--Search-->
-        <scene sceneID="UbV-Tn-liX">
-            <objects>
-                <viewController id="MzW-Nr-llo" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lmw-W7-Xfp">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89O-wd-BsC">
-                                <rect key="frame" x="154" y="406" width="82" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="j9Q-MI-25Z"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="y7W-kM-wBu"/>
-                    <navigationItem key="navigationItem" id="s3S-wb-hKl"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="trU-JP-vb7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2862" y="1809"/>
-        </scene>
         <!--Item-->
         <scene sceneID="BSc-EH-xYb">
             <objects>
@@ -407,7 +409,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a19-Yx-7l8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1911" y="1809"/>
+            <point key="canvasLocation" x="1928" y="1809"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -422,6 +424,9 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

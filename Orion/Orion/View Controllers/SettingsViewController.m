@@ -9,6 +9,7 @@
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
+#import "Query Manager.h"
 
 @interface SettingsViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -80,8 +81,11 @@
     // Do something with the images (based on your use case)
     originalImage = [self resizeImage:originalImage withSize:CGSizeMake(580, 580)];
 
-    PFUser *current = [PFUser currentUser];
-    current[@"profilePicture"] = originalImage;
+    [Query_Manager saveProfilePicture:[Query_Manager getPFFileFromImage:originalImage] withCompletion:^(BOOL succeeded, NSError * _Nullable error) {//pulls from query manager functions
+        if(succeeded){
+            NSLog(@"Pushed chosen photo to back-end: 📸📸📸📸📸📸📸📸");
+        }
+    }];
     
     [self.selectedProfilePhotoImageView setImage:originalImage];
 //    [PFUser currentUser]
