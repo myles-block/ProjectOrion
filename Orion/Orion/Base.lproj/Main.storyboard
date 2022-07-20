@@ -282,7 +282,7 @@
                                 <color key="backgroundColor" systemColor="systemMintColor"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="dOK-AJ-sis" appends="YES" id="eZs-Xx-i2z"/>
+                                    <outletCollection property="gestureRecognizers" destination="rbG-MY-0Fc" appends="YES" id="c6k-VG-Lwx"/>
                                 </connections>
                             </imageView>
                         </subviews>
@@ -304,13 +304,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="selectedProfilePhotoImageView" destination="pdW-la-roU" id="hie-qW-V4i"/>
+                        <outlet property="selectedProfilePhotoImageView" destination="pdW-la-roU" id="GPW-bj-3kz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5n-1q-UM5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="dOK-AJ-sis">
+                <tapGestureRecognizer id="rbG-MY-0Fc">
                     <connections>
-                        <action selector="didTapSetProfilePicture:" destination="Eul-As-gH0" id="WzL-uc-3Tz"/>
+                        <action selector="didTapSetProfilePicture:" destination="Eul-As-gH0" id="ap3-YG-tJL"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
