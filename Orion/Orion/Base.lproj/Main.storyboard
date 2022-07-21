@@ -171,8 +171,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="315"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRQ-ni-GWa">
-                                                    <rect key="frame" x="46" y="275" width="295" height="26"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRQ-ni-GWa">
+                                                    <rect key="frame" x="46" y="274.66666666666669" width="295" height="26.333333333333314"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -189,9 +189,10 @@
                                             <constraints>
                                                 <constraint firstItem="zRQ-ni-GWa" firstAttribute="top" secondItem="hbH-98-TX5" secondAttribute="bottom" constant="16.670000000000002" id="BcS-IS-xDo"/>
                                                 <constraint firstItem="hbH-98-TX5" firstAttribute="leading" secondItem="evJ-jY-M4b" secondAttribute="leadingMargin" constant="29" id="Gc2-4h-cbV"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="zRQ-ni-GWa" secondAttribute="bottom" constant="3" id="Kdx-Eo-xJ3"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="zRQ-ni-GWa" secondAttribute="bottom" constant="3" id="Kdx-Eo-xJ3"/>
                                                 <constraint firstItem="hbH-98-TX5" firstAttribute="top" secondItem="evJ-jY-M4b" secondAttribute="topMargin" constant="5" id="Kuy-XB-Mrk"/>
                                                 <constraint firstItem="zRQ-ni-GWa" firstAttribute="leading" secondItem="evJ-jY-M4b" secondAttribute="leadingMargin" constant="26" id="niN-PK-PmB"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zRQ-ni-GWa" secondAttribute="trailing" constant="29" id="phP-71-o1o"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

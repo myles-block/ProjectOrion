@@ -11,6 +11,8 @@
 		593C0C0BC2F6D2262FEEA9B9 /* Pods_Orion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F158056955DD1F1A25F1C7F8 /* Pods_Orion.framework */; };
 		962406E9B1B3F99211BF2A8E /* Pods_OrionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E0DF0E8A227EB4E70DC2B1 /* Pods_OrionTests.framework */; };
 		F3020E9A2888A8400081E854 /* HomeFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3020E992888A8400081E854 /* HomeFeedCell.m */; };
+		F3020EA02888C7250081E854 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = F3020E9F2888C7250081E854 /* Product.m */; };
+		F3020EA32889CF870081E854 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3020EA22889CF870081E854 /* APIManager.m */; };
 		F313D034287E17AA007C2874 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F313D033287E17AA007C2874 /* SettingsViewController.m */; };
 		F339B7D22878DCF80048E229 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F339B7D12878DCF80048E229 /* AppDelegate.m */; };
 		F339B7D52878DCF80048E229 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F339B7D42878DCF80048E229 /* SceneDelegate.m */; };
@@ -56,6 +58,10 @@
 		F158056955DD1F1A25F1C7F8 /* Pods_Orion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3020E982888A8400081E854 /* HomeFeedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFeedCell.h; sourceTree = "<group>"; };
 		F3020E992888A8400081E854 /* HomeFeedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedCell.m; sourceTree = "<group>"; };
+		F3020E9E2888C7250081E854 /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		F3020E9F2888C7250081E854 /* Product.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		F3020EA12889CF870081E854 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		F3020EA22889CF870081E854 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		F313D032287E17AA007C2874 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		F313D033287E17AA007C2874 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		F339B7CD2878DCF80048E229 /* Orion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orion.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +152,15 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		F3020E9D2888C6B60081E854 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3020E9E2888C7250081E854 /* Product.h */,
+				F3020E9F2888C7250081E854 /* Product.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F339B7C42878DCF80048E229 = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +192,7 @@
 				F3C557AA28821DFD00754E01 /* Query */,
 				F339B7D92878DCF90048E229 /* Main.storyboard */,
 				F339B7DE2878DCF90048E229 /* LaunchScreen.storyboard */,
+				F3020E9D2888C6B60081E854 /* Models */,
 				F3020E972888A6E30081E854 /* Home View */,
 				F339B7DC2878DCF90048E229 /* Assets.xcassets */,
 				F37A794D2878E6F900C765AF /* Keys.plist */,
@@ -221,6 +237,8 @@
 		F339B8082878E0060048E229 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				F3020EA12889CF870081E854 /* APIManager.h */,
+				F3020EA22889CF870081E854 /* APIManager.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -485,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3C402DF287C98740061AC85 /* SignInViewController.m in Sources */,
+				F3020EA02888C7250081E854 /* Product.m in Sources */,
 				F3A6B65D287CC8570014BA61 /* HomeFeedViewController.m in Sources */,
 				F339B7D82878DCF90048E229 /* LoginViewController.m in Sources */,
 				F3C557A828821DDE00754E01 /* Query Manager.m in Sources */,
@@ -493,6 +512,7 @@
 				F339B7D52878DCF80048E229 /* SceneDelegate.m in Sources */,
 				F313D034287E17AA007C2874 /* SettingsViewController.m in Sources */,
 				F3020E9A2888A8400081E854 /* HomeFeedCell.m in Sources */,
+				F3020EA32889CF870081E854 /* APIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
