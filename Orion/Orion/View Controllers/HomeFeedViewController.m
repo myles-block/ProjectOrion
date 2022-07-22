@@ -35,7 +35,7 @@ NSArray *data;
     self.feedTableView.delegate = self;
     
     //URL Request (should get moved to API manager in a bit
-    NSURL *url = [NSURL URLWithString:@"https://api.bestbuy.com/beta/products/trendingViewed?"];//add API Key back
+    NSURL *url = [NSURL URLWithString:@"https://api.bestbuy.com/beta/products/trendingViewed"];//add API Key back
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
