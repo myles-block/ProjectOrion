@@ -7,6 +7,7 @@ target 'Orion' do
 
   # Pods for Orion
   pod 'Parse'
+  pod 'AFNetworking'
 
   target 'OrionTests' do
     inherit! :search_paths

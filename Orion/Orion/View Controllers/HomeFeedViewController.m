@@ -5,12 +5,13 @@
 //  Created by Myles Block on 7/11/22.
 //
 
-//TODO: Add AFNetowrking Pod for image url pull
+//TODO: Add AFNetowrking Pod for image url pull ~ DONE!!!
 //TODO: Archive the current method used to pull API data so that it can be moved to manger file (and reconstruct a dictionary to hold data)
 //TODO: Hide API keys behind secure wall, so that they cannot be used
 
 #import "HomeFeedViewController.h"
 #import "HomeFeedCell.h"
+#import "UIImageview+AFNetworking.h"
 
 @interface HomeFeedViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
@@ -75,10 +76,12 @@ NSArray *data;
     
     NSDictionary *list = self.trendingProducts[indexPath.row];//indexPath parse through each row of trendingProducts and points it to list
     cell.productName.text = list[@"names"][@"title"];//list grabs the title of product & sets to label
-//    NSString *posterURLString = movie[@"poster_path"];
-//    [cell.productImage setImageWithURL:posterURL];
-    
-    //TODO: Add AFNetworking Pod
+    NSString *posterURLString = list[@"images"][@"standard"];
+    NSURL *posterURL = [NSURL URLWithString:posterURLString];
+//    NSString *baseURLString = @"http://api.bestbuy.com/beta/products/";
+//    NSString *completePosterURLString = [baseURLString stringByAppendingString:posterURLString];
+//    NSURL *posterURL = [NSURL URLWithString:completePosterURLString];
+    [cell.productImage setImageWithURL:posterURL];
     
     return cell;
 }
