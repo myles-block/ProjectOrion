@@ -5,9 +5,11 @@
 //  Created by Myles Block on 7/11/22.
 //
 
-//TODO: Add AFNetowrking Pod for image url pull ~ DONE!!!
+//TODO: Add sections to app for Trending View & Most Popular View & Articles
 //TODO: Archive the current method used to pull API data so that it can be moved to manger file (and reconstruct a dictionary to hold data)
 //TODO: Hide API keys behind secure wall, so that they cannot be used
+//TODO: Add AFNetowrking Pod for image url pull ~ DONE!!!
+
 
 #import "HomeFeedViewController.h"
 #import "HomeFeedCell.h"
@@ -35,7 +37,7 @@ NSArray *data;
     self.feedTableView.delegate = self;
     
     //URL Request (should get moved to API manager in a bit
-    NSURL *url = [NSURL URLWithString:@"https://api.bestbuy.com/beta/products/trendingViewed"];//add API Key back
+    NSURL *url = [NSURL URLWithString:@"https://api.bestbuy.com/beta/products/trendingViewed?apiKey=2LR7fPpLdncPLJ8A8JrG5SDM"];//add API Key back
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -69,6 +71,8 @@ NSArray *data;
 }
 */
 
+
+//MARK: TableView Functions
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     HomeFeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedCell" forIndexPath:indexPath];
 //        NSArray *cityState = [data[indexPath.row] componentsSeparatedByString:@", "];
@@ -86,8 +90,24 @@ NSArray *data;
     return cell;
 }
 
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {//Deals with of rows in section
     return self.trendingProducts.count;
 //    return data.count;
 }
+//
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {//Establishes Default Header for Section
+//    return @"Trending Products";
+//}
+//
+//
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {//Establishes number of sections in tableview
+//    return 1;
+//}
+//
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {//Creates custom header for section in table view
+//
+//}
+
+
+
 @end
