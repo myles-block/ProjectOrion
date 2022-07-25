@@ -18,7 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSMutableArray *)productsWithArray:(NSArray *)dictionaries;//parses through results and calls intializer function
 
 
-- (NSString *) getProductName;
 @end
 
 NS_ASSUME_NONNULL_END

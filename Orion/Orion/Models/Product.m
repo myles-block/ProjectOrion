@@ -33,7 +33,4 @@
     return products;
 }
 
-- (NSString *) getProductName {
-    return self.name;
-}
 @end
