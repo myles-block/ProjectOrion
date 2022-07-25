@@ -14,6 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *productImage;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;//intializer for home feed product dictionary (implementation in .m file)
+
++ (NSMutableArray *)productsWithArray:(NSArray *)dictionaries;//parses through results and calls intializer function
+
+
+- (NSString *) getProductName;
 @end
 
 NS_ASSUME_NONNULL_END

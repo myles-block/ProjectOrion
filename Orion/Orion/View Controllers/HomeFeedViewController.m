@@ -14,11 +14,13 @@
 #import "HomeFeedViewController.h"
 #import "HomeFeedCell.h"
 #import "UIImageview+AFNetworking.h"
+#import "APIManager.h"
+#import "Product.h"
 
 @interface HomeFeedViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
 @property (strong, nonatomic) NSArray *trendingProducts;//entire array of trending products given from API request
-
+@property (strong, nonatomic) NSMutableArray *trendingProductsFetch;
 @end
 
 @implementation HomeFeedViewController
@@ -26,6 +28,7 @@ NSArray *data;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     // Do any additional setup after loading the view.
 //    data = @[@"New York, NY", @"Los Angeles, CA", @"Chicago, IL", @"Houston, TX",
@@ -36,8 +39,11 @@ NSArray *data;
     self.feedTableView.dataSource = self;
     self.feedTableView.delegate = self;
     
+    [self fetchProducts];
+    /*
+    [[APIManager shared] getHomeFeedTrending];
     //URL Request (should get moved to API manager in a bit
-    NSURL *url = [NSURL URLWithString:@"https://api.bestbuy.com/beta/products/trendingViewed?apiKey=2LR7fPpLdncPLJ8A8JrG5SDM"];//add API Key back
+    NSURL *url = [NSURL URLWithString:@"https://api.bestbuy.com/beta/products/trendingViewed"];//add API Key back
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -50,7 +56,7 @@ NSArray *data;
                self.trendingProducts = dataDictionary[@"results"];//sets trendingProducts to entire results of request
                for (NSDictionary *products in self.trendingProducts)//parses through trending products to grab product name
                {
-                   NSLog(@"%@", products[@"names"][@"title"]);
+//                   NSLog(@"%@", products[@"names"][@"title"]);
                }
 //               NSLog(@"%@", dataDictionary);
                // TODO: Store the products in a property to use elsewhere
@@ -59,6 +65,26 @@ NSArray *data;
            }
        }];
     [task resume];
+     */
+}
+
+
+- (void) fetchProducts {
+    [[APIManager shared] getHomeFeedTrending:^(NSArray *products) {
+        if (products) {
+            NSLog(@"😎😎😎 Successfully loaded home timeline");
+            for (Product *product in products) {
+                NSString *text = product.name;
+                NSLog(@"%@", text);
+//                NSString *URLString = tweet.user.profilePicture;
+//                NSURL *url = [NSURL URLWithString:URLString];
+//                NSData *urlData = [NSData dataWithContentsOfURL:url];
+                //goes into UITable View Delegate Funcion
+            }
+            self.trendingProductsFetch = (NSMutableArray *) products;
+            [self.feedTableView reloadData];
+        }}];
+    
 }
 
 /*
@@ -78,9 +104,9 @@ NSArray *data;
 //        NSArray *cityState = [data[indexPath.row] componentsSeparatedByString:@", "];
 //        cell.productName.text = cityState.firstObject;
     
-    NSDictionary *list = self.trendingProducts[indexPath.row];//indexPath parse through each row of trendingProducts and points it to list
-    cell.productName.text = list[@"names"][@"title"];//list grabs the title of product & sets to label
-    NSString *posterURLString = list[@"images"][@"standard"];
+    Product *list = self.trendingProductsFetch[indexPath.row];//indexPath parse through each row of trendingProducts and points it to list
+    cell.productName.text = list.name;//list grabs the title of product & sets to label
+    NSString *posterURLString = list.productImage;
     NSURL *posterURL = [NSURL URLWithString:posterURLString];
 //    NSString *baseURLString = @"http://api.bestbuy.com/beta/products/";
 //    NSString *completePosterURLString = [baseURLString stringByAppendingString:posterURLString];
@@ -91,23 +117,26 @@ NSArray *data;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {//Deals with of rows in section
-    return self.trendingProducts.count;
+    return self.trendingProductsFetch.count;
 //    return data.count;
 }
-//
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {//Establishes Default Header for Section
-//    return @"Trending Products";
-//}
-//
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {//Establishes number of sections in tableview
-//    return 1;
-//}
-//
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {//Creates custom header for section in table view
-//
-//}
 
+
+
+/*
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {//Establishes Default Header for Section
+    return @"Trending Products";
+}
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {//Establishes number of sections in tableview
+    return 1;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {//Creates custom header for section in table view
+    
+}
+*/
 
 
 @end

@@ -11,6 +11,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APIManager : NSObject
 
+@property (nonatomic) NSString *api_key;
++ (instancetype)shared;
+- (void)getHomeFeedTrending:(void(^)(NSArray *products))completion;
+
 @end
 
 NS_ASSUME_NONNULL_END
