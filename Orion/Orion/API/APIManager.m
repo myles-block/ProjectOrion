@@ -22,7 +22,7 @@ static NSString * const baseURLString = @"https://api.bestbuy.com/beta/products/
     return sharedManager;
 }
 
-- (instancetype)init {//Initializer of API Manager file
+- (instancetype)init {//Initializer of API Manager file: pulls api_key from plist
         NSString *path = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
         NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
         NSString *key = [dict objectForKey: @"api_Key"];
@@ -33,7 +33,7 @@ static NSString * const baseURLString = @"https://api.bestbuy.com/beta/products/
     return self;
 }
 
-- (void)getHomeFeedTrending:(void(^)(NSArray *products))completion {
+- (void)getHomeFeedTrending:(void(^)(NSArray *products))completion {//Creates trending products request for Home Feed
     NSString *trendingParam = [NSString stringWithFormat:@"%@%@%@", baseURLString, @"trendingViewed?apiKey=", self.api_key];//stringWithFormat appends strings (%@ * amt of params)
     NSURL *url = [NSURL URLWithString:trendingParam];//add API Key back
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:20.0];
