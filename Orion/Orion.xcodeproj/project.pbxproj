@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48C09D5D8C319743C9A4CD57 /* Pods_Orion_OrionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274E6963F93410C38DB3008D /* Pods_Orion_OrionUITests.framework */; };
-		593C0C0BC2F6D2262FEEA9B9 /* Pods_Orion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F158056955DD1F1A25F1C7F8 /* Pods_Orion.framework */; };
-		962406E9B1B3F99211BF2A8E /* Pods_OrionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E0DF0E8A227EB4E70DC2B1 /* Pods_OrionTests.framework */; };
+		75E50F3EC255FAFBB2B2628F /* Pods_OrionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B43268870A1E3230426DFF2 /* Pods_OrionTests.framework */; };
+		8BBBEEBBDE81F7DE60691244 /* Pods_Orion_OrionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616484828A0260BF6CBAD920 /* Pods_Orion_OrionUITests.framework */; };
+		BC179914FEA78255660C0911 /* Pods_Orion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB4E79305A86350A47D8054 /* Pods_Orion.framework */; };
+		F3020E9A2888A8400081E854 /* HomeFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3020E992888A8400081E854 /* HomeFeedCell.m */; };
+		F3020EA02888C7250081E854 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = F3020E9F2888C7250081E854 /* Product.m */; };
+		F3020EA32889CF870081E854 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3020EA22889CF870081E854 /* APIManager.m */; };
 		F313D034287E17AA007C2874 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F313D033287E17AA007C2874 /* SettingsViewController.m */; };
 		F339B7D22878DCF80048E229 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F339B7D12878DCF80048E229 /* AppDelegate.m */; };
 		F339B7D52878DCF80048E229 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F339B7D42878DCF80048E229 /* SceneDelegate.m */; };
@@ -45,14 +48,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		16E0DF0E8A227EB4E70DC2B1 /* Pods_OrionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		274E6963F93410C38DB3008D /* Pods_Orion_OrionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orion_OrionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6586E8CC032968E539F1C384 /* Pods-Orion-OrionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orion-OrionUITests.release.xcconfig"; path = "Target Support Files/Pods-Orion-OrionUITests/Pods-Orion-OrionUITests.release.xcconfig"; sourceTree = "<group>"; };
-		81E49790534342DF203DCA00 /* Pods-OrionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrionTests.debug.xcconfig"; path = "Target Support Files/Pods-OrionTests/Pods-OrionTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8ECDDAD0D8FE55673AF819E9 /* Pods-OrionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrionTests.release.xcconfig"; path = "Target Support Files/Pods-OrionTests/Pods-OrionTests.release.xcconfig"; sourceTree = "<group>"; };
-		C6648D2F6CC36F992CF140DE /* Pods-Orion-OrionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orion-OrionUITests.debug.xcconfig"; path = "Target Support Files/Pods-Orion-OrionUITests/Pods-Orion-OrionUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		F053EAA99764D6EBB86D3DDF /* Pods-Orion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orion.debug.xcconfig"; path = "Target Support Files/Pods-Orion/Pods-Orion.debug.xcconfig"; sourceTree = "<group>"; };
-		F158056955DD1F1A25F1C7F8 /* Pods_Orion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A8E110DB944CF3CDBE3C680 /* Pods-Orion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orion.debug.xcconfig"; path = "Target Support Files/Pods-Orion/Pods-Orion.debug.xcconfig"; sourceTree = "<group>"; };
+		3F85BFA1D626171888F84E97 /* Pods-OrionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrionTests.release.xcconfig"; path = "Target Support Files/Pods-OrionTests/Pods-OrionTests.release.xcconfig"; sourceTree = "<group>"; };
+		4CB4E79305A86350A47D8054 /* Pods_Orion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E1B520AF44209A0EF2A775B /* Pods-Orion-OrionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orion-OrionUITests.debug.xcconfig"; path = "Target Support Files/Pods-Orion-OrionUITests/Pods-Orion-OrionUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		616484828A0260BF6CBAD920 /* Pods_Orion_OrionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orion_OrionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B43268870A1E3230426DFF2 /* Pods_OrionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E78EFF264609A812B9D1E46 /* Pods-OrionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrionTests.debug.xcconfig"; path = "Target Support Files/Pods-OrionTests/Pods-OrionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9EF1A583ED2C9210E5D94DB1 /* Pods-Orion-OrionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orion-OrionUITests.release.xcconfig"; path = "Target Support Files/Pods-Orion-OrionUITests/Pods-Orion-OrionUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D81CA25742D353E5F819921A /* Pods-Orion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orion.release.xcconfig"; path = "Target Support Files/Pods-Orion/Pods-Orion.release.xcconfig"; sourceTree = "<group>"; };
+		F3020E982888A8400081E854 /* HomeFeedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFeedCell.h; sourceTree = "<group>"; };
+		F3020E992888A8400081E854 /* HomeFeedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedCell.m; sourceTree = "<group>"; };
+		F3020E9E2888C7250081E854 /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		F3020E9F2888C7250081E854 /* Product.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		F3020EA12889CF870081E854 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		F3020EA22889CF870081E854 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		F313D032287E17AA007C2874 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		F313D033287E17AA007C2874 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		F339B7CD2878DCF80048E229 /* Orion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orion.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +89,6 @@
 		F3C402DE287C98740061AC85 /* SignInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		F3C557A628821DDE00754E01 /* Query Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Query Manager.h"; sourceTree = "<group>"; };
 		F3C557A728821DDE00754E01 /* Query Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Query Manager.m"; sourceTree = "<group>"; };
-		FF9F1C5BF1C4B02D01CD42F5 /* Pods-Orion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orion.release.xcconfig"; path = "Target Support Files/Pods-Orion/Pods-Orion.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				593C0C0BC2F6D2262FEEA9B9 /* Pods_Orion.framework in Frameworks */,
+				BC179914FEA78255660C0911 /* Pods_Orion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				962406E9B1B3F99211BF2A8E /* Pods_OrionTests.framework in Frameworks */,
+				75E50F3EC255FAFBB2B2628F /* Pods_OrionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48C09D5D8C319743C9A4CD57 /* Pods_Orion_OrionUITests.framework in Frameworks */,
+				8BBBEEBBDE81F7DE60691244 /* Pods_Orion_OrionUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,24 +122,43 @@
 		420E84FF00D402331B34D587 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F053EAA99764D6EBB86D3DDF /* Pods-Orion.debug.xcconfig */,
-				FF9F1C5BF1C4B02D01CD42F5 /* Pods-Orion.release.xcconfig */,
-				C6648D2F6CC36F992CF140DE /* Pods-Orion-OrionUITests.debug.xcconfig */,
-				6586E8CC032968E539F1C384 /* Pods-Orion-OrionUITests.release.xcconfig */,
-				81E49790534342DF203DCA00 /* Pods-OrionTests.debug.xcconfig */,
-				8ECDDAD0D8FE55673AF819E9 /* Pods-OrionTests.release.xcconfig */,
+				3A8E110DB944CF3CDBE3C680 /* Pods-Orion.debug.xcconfig */,
+				D81CA25742D353E5F819921A /* Pods-Orion.release.xcconfig */,
+				4E1B520AF44209A0EF2A775B /* Pods-Orion-OrionUITests.debug.xcconfig */,
+				9EF1A583ED2C9210E5D94DB1 /* Pods-Orion-OrionUITests.release.xcconfig */,
+				9E78EFF264609A812B9D1E46 /* Pods-OrionTests.debug.xcconfig */,
+				3F85BFA1D626171888F84E97 /* Pods-OrionTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		713316A5D90400FBE986C083 /* Frameworks */ = {
+		846705F1F542B71D818E62C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F158056955DD1F1A25F1C7F8 /* Pods_Orion.framework */,
-				274E6963F93410C38DB3008D /* Pods_Orion_OrionUITests.framework */,
-				16E0DF0E8A227EB4E70DC2B1 /* Pods_OrionTests.framework */,
+				4CB4E79305A86350A47D8054 /* Pods_Orion.framework */,
+				616484828A0260BF6CBAD920 /* Pods_Orion_OrionUITests.framework */,
+				6B43268870A1E3230426DFF2 /* Pods_OrionTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F3020E972888A6E30081E854 /* Home View */ = {
+			isa = PBXGroup;
+			children = (
+				F3020E982888A8400081E854 /* HomeFeedCell.h */,
+				F3020E992888A8400081E854 /* HomeFeedCell.m */,
+			);
+			name = "Home View";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		F3020E9D2888C6B60081E854 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3020E9E2888C7250081E854 /* Product.h */,
+				F3020E9F2888C7250081E854 /* Product.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F339B7C42878DCF80048E229 = {
@@ -141,7 +169,7 @@
 				F339B7F52878DCF90048E229 /* OrionUITests */,
 				F339B7CE2878DCF80048E229 /* Products */,
 				420E84FF00D402331B34D587 /* Pods */,
-				713316A5D90400FBE986C083 /* Frameworks */,
+				846705F1F542B71D818E62C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +192,8 @@
 				F3C557AA28821DFD00754E01 /* Query */,
 				F339B7D92878DCF90048E229 /* Main.storyboard */,
 				F339B7DE2878DCF90048E229 /* LaunchScreen.storyboard */,
+				F3020E9D2888C6B60081E854 /* Models */,
+				F3020E972888A6E30081E854 /* Home View */,
 				F339B7DC2878DCF90048E229 /* Assets.xcassets */,
 				F37A794D2878E6F900C765AF /* Keys.plist */,
 				F339B7E12878DCF90048E229 /* Info.plist */,
@@ -207,6 +237,8 @@
 		F339B8082878E0060048E229 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				F3020EA12889CF870081E854 /* APIManager.h */,
+				F3020EA22889CF870081E854 /* APIManager.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -238,11 +270,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F339B7FC2878DCF90048E229 /* Build configuration list for PBXNativeTarget "Orion" */;
 			buildPhases = (
-				09142A146915AC3716E4DD3B /* [CP] Check Pods Manifest.lock */,
+				5484F7F3CE15AE2EDD9E2B92 /* [CP] Check Pods Manifest.lock */,
 				F339B7C92878DCF80048E229 /* Sources */,
 				F339B7CA2878DCF80048E229 /* Frameworks */,
 				F339B7CB2878DCF80048E229 /* Resources */,
-				A4B17E5509497F8BE348DD1D /* [CP] Embed Pods Frameworks */,
+				1006003714FC0E78A4EAD6BF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,7 +289,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F339B7FF2878DCF90048E229 /* Build configuration list for PBXNativeTarget "OrionTests" */;
 			buildPhases = (
-				7E39B8E40CBAE28B182EF798 /* [CP] Check Pods Manifest.lock */,
+				819D3179CE5B0F0ADF31A27E /* [CP] Check Pods Manifest.lock */,
 				F339B7E42878DCF90048E229 /* Sources */,
 				F339B7E52878DCF90048E229 /* Frameworks */,
 				F339B7E62878DCF90048E229 /* Resources */,
@@ -276,11 +308,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F339B8022878DCF90048E229 /* Build configuration list for PBXNativeTarget "OrionUITests" */;
 			buildPhases = (
-				B2CD34882DA671797583F147 /* [CP] Check Pods Manifest.lock */,
+				46B04E5881930414356A1DD4 /* [CP] Check Pods Manifest.lock */,
 				F339B7EE2878DCF90048E229 /* Sources */,
 				F339B7EF2878DCF90048E229 /* Frameworks */,
 				F339B7F02878DCF90048E229 /* Resources */,
-				FF399A41EF7CC6228501CB99 /* [CP] Embed Pods Frameworks */,
+				86E4223E46FE2E10C3DC0650 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -363,51 +395,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		09142A146915AC3716E4DD3B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Orion-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7E39B8E40CBAE28B182EF798 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OrionTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A4B17E5509497F8BE348DD1D /* [CP] Embed Pods Frameworks */ = {
+		1006003714FC0E78A4EAD6BF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -424,7 +412,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orion/Pods-Orion-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B2CD34882DA671797583F147 /* [CP] Check Pods Manifest.lock */ = {
+		46B04E5881930414356A1DD4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -446,7 +434,51 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FF399A41EF7CC6228501CB99 /* [CP] Embed Pods Frameworks */ = {
+		5484F7F3CE15AE2EDD9E2B92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Orion-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		819D3179CE5B0F0ADF31A27E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OrionTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86E4223E46FE2E10C3DC0650 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -471,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3C402DF287C98740061AC85 /* SignInViewController.m in Sources */,
+				F3020EA02888C7250081E854 /* Product.m in Sources */,
 				F3A6B65D287CC8570014BA61 /* HomeFeedViewController.m in Sources */,
 				F339B7D82878DCF90048E229 /* LoginViewController.m in Sources */,
 				F3C557A828821DDE00754E01 /* Query Manager.m in Sources */,
@@ -478,6 +511,8 @@
 				F339B7E32878DCF90048E229 /* main.m in Sources */,
 				F339B7D52878DCF80048E229 /* SceneDelegate.m in Sources */,
 				F313D034287E17AA007C2874 /* SettingsViewController.m in Sources */,
+				F3020E9A2888A8400081E854 /* HomeFeedCell.m in Sources */,
+				F3020EA32889CF870081E854 /* APIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,12 +680,13 @@
 		};
 		F339B7FD2878DCF90048E229 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F053EAA99764D6EBB86D3DDF /* Pods-Orion.debug.xcconfig */;
+			baseConfigurationReference = 3A8E110DB944CF3CDBE3C680 /* Pods-Orion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CP993F2VM3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Orion/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -672,12 +708,13 @@
 		};
 		F339B7FE2878DCF90048E229 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF9F1C5BF1C4B02D01CD42F5 /* Pods-Orion.release.xcconfig */;
+			baseConfigurationReference = D81CA25742D353E5F819921A /* Pods-Orion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CP993F2VM3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Orion/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -699,7 +736,7 @@
 		};
 		F339B8002878DCF90048E229 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81E49790534342DF203DCA00 /* Pods-OrionTests.debug.xcconfig */;
+			baseConfigurationReference = 9E78EFF264609A812B9D1E46 /* Pods-OrionTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -717,7 +754,7 @@
 		};
 		F339B8012878DCF90048E229 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8ECDDAD0D8FE55673AF819E9 /* Pods-OrionTests.release.xcconfig */;
+			baseConfigurationReference = 3F85BFA1D626171888F84E97 /* Pods-OrionTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -735,7 +772,7 @@
 		};
 		F339B8032878DCF90048E229 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6648D2F6CC36F992CF140DE /* Pods-Orion-OrionUITests.debug.xcconfig */;
+			baseConfigurationReference = 4E1B520AF44209A0EF2A775B /* Pods-Orion-OrionUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -751,7 +788,7 @@
 		};
 		F339B8042878DCF90048E229 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6586E8CC032968E539F1C384 /* Pods-Orion-OrionUITests.release.xcconfig */;
+			baseConfigurationReference = 9EF1A583ED2C9210E5D94DB1 /* Pods-Orion-OrionUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

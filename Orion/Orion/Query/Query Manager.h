@@ -11,8 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Query_Manager : NSObject
+
 + (void) saveProfilePicture:(PFFileObject *)image withCompletion: (PFBooleanResultBlock _Nullable)completion;
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image;
+
 @end
 
 NS_ASSUME_NONNULL_END
