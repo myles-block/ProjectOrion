@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Product : NSObject
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *productImage;
+@property (nonatomic, strong) NSString *productSKU;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;//intializer for home feed product dictionary (implementation in .m file)
 

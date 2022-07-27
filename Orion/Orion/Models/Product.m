@@ -17,6 +17,7 @@
     if (self) {
         self.name = dictionary[@"names"][@"title"];
         self.productImage = dictionary[@"images"][@"standard"];
+        self.productSKU = dictionary[@"sku"];
         //...
     // Initialize any other properties
     }

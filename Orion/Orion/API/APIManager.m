@@ -5,11 +5,12 @@
 //  Created by Myles Block on 7/21/22.
 //
 
-//TODO: WHEREAMIAT ~ dataDictionary connect to productsWithArray...need to set Array values to model labels
+//TODO: WHEREAMIAT ~ working on getProductSpecs...need to add another conversion function into products that adds description to product model...consider refactoring
 #import "APIManager.h"
 #import "Product.h"
 
 static NSString * const baseURLString = @"https://api.bestbuy.com/beta/products/";
+static NSString * const productAPIURLString = @"https://api.bestbuy.com/v1/products";//URL String for Products API
 
 @implementation APIManager
 
@@ -49,6 +50,26 @@ static NSString * const baseURLString = @"https://api.bestbuy.com/beta/products/
                NSMutableArray *trendingProducts = [Product productsWithArray:resultsArray];
                NSLog(@"%@", @"Logged✅✅✅");
                completion(trendingProducts);
+           }
+       }];
+    [task resume];
+}
+
+- (void)getProductSpecs:(Product *)passedItem {
+    NSString *productAPILink = [NSString stringWithFormat:@"%@%@%@%@%@%@", productAPIURLString, @"(sku=", passedItem.productSKU, @")?apiKey=",self.api_key, @"&sort=longDescription.asc&show=longDescription,shortDescription,description,manufacturer,color,sku&format=json"];
+    NSURL *url = [NSURL URLWithString:productAPIURLString];//add API Key back
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:20.0];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+           if (error != nil) {
+               NSLog(@"%@", [error localizedDescription]);
+           }
+           else {
+               NSDictionary *givenRequest = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+               //TODO: Change the code below (and test request)
+//               NSArray *productInfo = givenRequest[@"results"];//results array of trending products
+//               NSMutableArray *trendingProducts = [Product productsWithArray:productInfo];
+               NSLog(@"%@", @"Logged✅✅✅");
            }
        }];
     [task resume];

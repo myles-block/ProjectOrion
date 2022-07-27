@@ -12,6 +12,7 @@
 
 
 #import "HomeFeedViewController.h"
+#import "DetailsViewController.h"
 #import "HomeFeedCell.h"
 #import "UIImageview+AFNetworking.h"
 #import "APIManager.h"
@@ -19,7 +20,7 @@
 
 @interface HomeFeedViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
-@property (strong, nonatomic) NSArray *trendingProducts;//entire array of trending products given from API request
+@property (strong, nonatomic) NSArray *trendingProducts;//entire array of trending products given from API request ~ not in use
 @property (strong, nonatomic) NSMutableArray *trendingProductsFetch;
 @end
 
@@ -49,15 +50,20 @@ NSArray *data;
     
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    //THIS SEGUE PASSES IN THE SELECTED PRODUCT FROM THE HOME FEED TABLE VIEW
+    NSIndexPath *index = self.feedTableView.indexPathForSelectedRow;
+    Product *dataToPass = self.trendingProductsFetch[index.row];
+    DetailsViewController *detailVC = [segue destinationViewController];
+    detailVC.selectedProduct = dataToPass;
 }
-*/
+
 
 
 //MARK: TableView Functions

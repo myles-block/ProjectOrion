@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Product.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSString *api_key;
 + (instancetype)shared;
 - (void)getHomeFeedTrending:(void(^)(NSArray *products))completion;
+- (void)getProductSpecs:(Product *)passedItem;
 
 @end
 
