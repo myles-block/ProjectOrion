@@ -147,6 +147,50 @@
             </objects>
             <point key="canvasLocation" x="908" y="-279"/>
         </scene>
+        <!--Details View Controller-->
+        <scene sceneID="lYh-cV-6ts">
+            <objects>
+                <viewController id="R47-jQ-LqU" customClass="DetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fHo-P0-vez">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCb-io-CKq">
+                                <rect key="frame" x="49" y="124" width="298" height="262"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2h-0M-Fef">
+                                <rect key="frame" x="38" y="422" width="164" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BW1-GJ-FP8">
+                                <rect key="frame" x="49" y="489" width="298" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit, lorem eu ultricies sagittis, magna magna eleifend est, vitae ultrices lorem justo nec augue. In hac habitasse platea dictumst. Cras viverra elit purus, non auctor nibh placerat ut. Vivamus mollis commodo elit, nec dignissim nunc tempus ac. Suspendisse vitae enim vel lorem bibendum efficitur nec quis lacus. Nullam rhoncus, tellus in varius placerat, leo urna varius elit, eu rutrum diam dolor sit amet libero. Etiam molestie mi nibh, sed venenatis diam blandit sed. Vestibulum dignissim lacus massa, eu auctor neque blandit a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut non tortor suscipit, tempus nibh eget, iaculis purus. Sed a consectetur felis. Maecenas volutpat congue enim non tempus. Maecenas venenatis at purus ac maximus. Fusce efficitur finibus bibendum.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n35-pl-YRF">
+                                <rect key="frame" x="49" y="460" width="49" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BJT-CV-qTb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iWy-8c-T5M"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wvq-XM-Cdf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2807.6923076923076" y="-932.70142180094786"/>
+        </scene>
         <!--Home-->
         <scene sceneID="X2r-Mi-OUU">
             <objects>
@@ -196,6 +240,7 @@
                                         <connections>
                                             <outlet property="productImage" destination="hbH-98-TX5" id="A9i-Sq-g6g"/>
                                             <outlet property="productName" destination="zRQ-ni-GWa" id="qqV-hn-Dec"/>
+                                            <segue destination="R47-jQ-LqU" kind="show" id="nhK-a9-aJ9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

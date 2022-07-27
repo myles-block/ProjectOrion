@@ -28,6 +28,7 @@
 		F3A6B65D287CC8570014BA61 /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A6B65C287CC8570014BA61 /* HomeFeedViewController.m */; };
 		F3C402DF287C98740061AC85 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C402DE287C98740061AC85 /* SignInViewController.m */; };
 		F3C557A828821DDE00754E01 /* Query Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C557A728821DDE00754E01 /* Query Manager.m */; };
+		F3DC293D2891C81B00ED72FD /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DC293C2891C81B00ED72FD /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		F3C402DE287C98740061AC85 /* SignInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		F3C557A628821DDE00754E01 /* Query Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Query Manager.h"; sourceTree = "<group>"; };
 		F3C557A728821DDE00754E01 /* Query Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Query Manager.m"; sourceTree = "<group>"; };
+		F3DC293B2891C81B00ED72FD /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		F3DC293C2891C81B00ED72FD /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +233,8 @@
 				F3A6B65C287CC8570014BA61 /* HomeFeedViewController.m */,
 				F313D032287E17AA007C2874 /* SettingsViewController.h */,
 				F313D033287E17AA007C2874 /* SettingsViewController.m */,
+				F3DC293B2891C81B00ED72FD /* DetailsViewController.h */,
+				F3DC293C2891C81B00ED72FD /* DetailsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -505,6 +510,7 @@
 				F3C402DF287C98740061AC85 /* SignInViewController.m in Sources */,
 				F3020EA02888C7250081E854 /* Product.m in Sources */,
 				F3A6B65D287CC8570014BA61 /* HomeFeedViewController.m in Sources */,
+				F3DC293D2891C81B00ED72FD /* DetailsViewController.m in Sources */,
 				F339B7D82878DCF90048E229 /* LoginViewController.m in Sources */,
 				F3C557A828821DDE00754E01 /* Query Manager.m in Sources */,
 				F339B7D22878DCF80048E229 /* AppDelegate.m in Sources */,
