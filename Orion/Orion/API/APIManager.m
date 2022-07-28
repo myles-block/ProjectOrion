@@ -55,9 +55,11 @@ static NSString * const productAPIURLString = @"https://api.bestbuy.com/v1/produ
     [task resume];
 }
 
+//PAUSED on this setup
 - (void)getProductSpecs:(Product *)passedItem {
+    //passes into Product
     NSString *productAPILink = [NSString stringWithFormat:@"%@%@%@%@%@%@", productAPIURLString, @"(sku=", passedItem.productSKU, @")?apiKey=",self.api_key, @"&sort=longDescription.asc&show=longDescription,shortDescription,description,manufacturer,color,sku&format=json"];
-    NSURL *url = [NSURL URLWithString:productAPIURLString];//add API Key back
+    NSURL *url = [NSURL URLWithString:productAPIURLString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:20.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -67,9 +69,9 @@ static NSString * const productAPIURLString = @"https://api.bestbuy.com/v1/produ
            else {
                NSDictionary *givenRequest = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                //TODO: Change the code below (and test request)
-//               NSArray *productInfo = givenRequest[@"results"];//results array of trending products
+               NSArray *productInfo = givenRequest[@"products"];//results array of trending products
 //               NSMutableArray *trendingProducts = [Product productsWithArray:productInfo];
-               NSLog(@"%@", @"Logged✅✅✅");
+               NSLog(@"%@", @"LoggedProductSpecs✅✅✅");
            }
        }];
     [task resume];
