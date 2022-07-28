@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -170,7 +171,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BW1-GJ-FP8">
                                 <rect key="frame" x="49" y="489" width="298" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit, lorem eu ultricies sagittis, magna magna eleifend est, vitae ultrices lorem justo nec augue. In hac habitasse platea dictumst. Cras viverra elit purus, non auctor nibh placerat ut. Vivamus mollis commodo elit, nec dignissim nunc tempus ac. Suspendisse vitae enim vel lorem bibendum efficitur nec quis lacus. Nullam rhoncus, tellus in varius placerat, leo urna varius elit, eu rutrum diam dolor sit amet libero. Etiam molestie mi nibh, sed venenatis diam blandit sed. Vestibulum dignissim lacus massa, eu auctor neque blandit a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut non tortor suscipit, tempus nibh eget, iaculis purus. Sed a consectetur felis. Maecenas volutpat congue enim non tempus. Maecenas venenatis at purus ac maximus. Fusce efficitur finibus bibendum.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit, lorem eu ultricies sagittis, magna magna eleifend est, vitae ultrices lorem justo nec augue. In hac habitasse platea dictumst. Cras viverra elit purus, non auctor nibh placerat ut. Vivamus mollis commodo elit, nec dignissim nunc tempus ac. Suspendisse vitae enim vel lorem bibendum efficitur nec quis lacus. Nullam rhoncus, tellus in varius placerat, leo urna varius elit, eu rutrum diam dolor sit amet libero. Etiam molestie mi nibh, sed venenatis diam blandit sed. Vestibulum dignissim lacus massa, eu auctor neque blandit a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut non tortor suscipit, tempus nibh eget, iaculis purus. Sed a consectetur felis. Maecenas volutpat congue enim non tempus. Maecenas venenatis at purus ac maximus. Fusce efficitur finibus bibendum.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -293,7 +294,7 @@
             </objects>
             <point key="canvasLocation" x="2807.6923076923076" y="-265.16587677725119"/>
         </scene>
-        <!--News-->
+        <!--Filter-->
         <scene sceneID="pFm-Jb-QzU">
             <objects>
                 <viewController id="Pi6-SN-2qJ" sceneMemberID="viewController">
@@ -301,23 +302,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iW2-Iw-T4m">
-                                <rect key="frame" x="163" y="354" width="66" height="33"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gxg-xj-ey3">
+                                <rect key="frame" x="16" y="88" width="358" height="660"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kLf-hS-Isx">
+                                    <size key="itemSize" width="131" height="126"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="CWL-ZZ-aew" customClass="CategoryCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="131" height="126"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UKI-6l-kFY">
+                                            <rect key="frame" x="0.0" y="0.0" width="131" height="126"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fC3-gB-wAN">
+                                                    <rect key="frame" x="4" y="4" width="123" height="118"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="131" height="126"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BW0-6h-Fr3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="News" image="newspaper.fill" catalog="system" id="dfx-0K-Hkt"/>
+                    <tabBarItem key="tabBarItem" title="Filter" image="newspaper.fill" catalog="system" id="dfx-0K-Hkt"/>
                     <navigationItem key="navigationItem" id="05U-ic-77x"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OX6-gq-3ub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2862" y="455"/>
+            <point key="canvasLocation" x="2861.5384615384614" y="454.9763033175355"/>
         </scene>
         <!--Bookmark-->
         <scene sceneID="vsH-gy-icW">
@@ -547,6 +573,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

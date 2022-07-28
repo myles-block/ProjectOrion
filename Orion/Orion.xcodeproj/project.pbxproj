@@ -29,6 +29,8 @@
 		F3C402DF287C98740061AC85 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C402DE287C98740061AC85 /* SignInViewController.m */; };
 		F3C557A828821DDE00754E01 /* Query Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C557A728821DDE00754E01 /* Query Manager.m */; };
 		F3DC293D2891C81B00ED72FD /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DC293C2891C81B00ED72FD /* DetailsViewController.m */; };
+		F3DC2940289236F400ED72FD /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DC293F289236F400ED72FD /* FilterViewController.m */; };
+		F3DC2943289237CD00ED72FD /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DC2942289237CD00ED72FD /* CategoryCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,10 @@
 		F3C557A728821DDE00754E01 /* Query Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Query Manager.m"; sourceTree = "<group>"; };
 		F3DC293B2891C81B00ED72FD /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		F3DC293C2891C81B00ED72FD /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		F3DC293E289236F400ED72FD /* FilterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		F3DC293F289236F400ED72FD /* FilterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		F3DC2941289237CD00ED72FD /* CategoryCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionViewCell.h; sourceTree = "<group>"; };
+		F3DC2942289237CD00ED72FD /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +202,7 @@
 				F339B7D92878DCF90048E229 /* Main.storyboard */,
 				F339B7DE2878DCF90048E229 /* LaunchScreen.storyboard */,
 				F3020E9D2888C6B60081E854 /* Models */,
+				F3DC2944289237DA00ED72FD /* Category View */,
 				F3020E972888A6E30081E854 /* Home View */,
 				F339B7DC2878DCF90048E229 /* Assets.xcassets */,
 				F37A794D2878E6F900C765AF /* Keys.plist */,
@@ -235,6 +242,8 @@
 				F313D033287E17AA007C2874 /* SettingsViewController.m */,
 				F3DC293B2891C81B00ED72FD /* DetailsViewController.h */,
 				F3DC293C2891C81B00ED72FD /* DetailsViewController.m */,
+				F3DC293E289236F400ED72FD /* FilterViewController.h */,
+				F3DC293F289236F400ED72FD /* FilterViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -266,6 +275,15 @@
 				F3C557A728821DDE00754E01 /* Query Manager.m */,
 			);
 			path = Query;
+			sourceTree = "<group>";
+		};
+		F3DC2944289237DA00ED72FD /* Category View */ = {
+			isa = PBXGroup;
+			children = (
+				F3DC2941289237CD00ED72FD /* CategoryCollectionViewCell.h */,
+				F3DC2942289237CD00ED72FD /* CategoryCollectionViewCell.m */,
+			);
+			path = "Category View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,6 +528,8 @@
 				F3C402DF287C98740061AC85 /* SignInViewController.m in Sources */,
 				F3020EA02888C7250081E854 /* Product.m in Sources */,
 				F3A6B65D287CC8570014BA61 /* HomeFeedViewController.m in Sources */,
+				F3DC2940289236F400ED72FD /* FilterViewController.m in Sources */,
+				F3DC2943289237CD00ED72FD /* CategoryCollectionViewCell.m in Sources */,
 				F3DC293D2891C81B00ED72FD /* DetailsViewController.m in Sources */,
 				F339B7D82878DCF90048E229 /* LoginViewController.m in Sources */,
 				F3C557A828821DDE00754E01 /* Query Manager.m in Sources */,
