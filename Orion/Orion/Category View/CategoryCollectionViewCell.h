@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CategoryCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 
 @end
 
