@@ -55,6 +55,31 @@ static NSString * const productAPIURLString = @"https://api.bestbuy.com/v1/produ
     [task resume];
 }
 
+
+
+- (void)getCategorySpecificTrending:(NSDictionary *)passedCategoryInfo completion:(void(^)(NSArray *products))completion
+    {//Creates category trending products request for Category Specific Filter View
+//        __block NSMutableArray *trendingProducts = nil;//allows assignment of a variable that lies within a code block (need to change getHomeFeedTrending
+        NSString *category_id = [passedCategoryInfo objectForKey:@"id"];
+        NSString *trendingParam = [NSString stringWithFormat:@"%@%@%@%@%@", baseURLString, @"trendingViewed(categoryId=", category_id,@")?apiKey=", self.api_key];//stringWithFormat appends strings (%@ * amt of params)
+        NSURL *url = [NSURL URLWithString:trendingParam];//add API Key back
+        NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:20.0];
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+        NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+               if (error != nil) {
+                   NSLog(@"%@", [error localizedDescription]);
+               }
+               else {
+                   NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                   NSArray *resultsArray = dataDictionary[@"results"];//results array of trending products
+                   NSMutableArray *trendingProducts = [Product productsWithArray:resultsArray];
+                   NSLog(@"%@", @"Logged Category Specific✅✅✅");
+                   completion(trendingProducts);
+               }
+           }];
+        [task resume];
+}
+
 //PAUSED on this setup
 - (void)getProductSpecs:(Product *)passedItem {
     //passes into Product

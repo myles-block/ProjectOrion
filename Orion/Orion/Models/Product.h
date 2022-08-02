@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>//needed for CGFloat
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -13,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *productImage;
 @property (nonatomic, strong) NSString *productSKU;
+@property (nonatomic, strong) NSString *productPrice;
+//@property CGFloat *productPrice;
 
 
 

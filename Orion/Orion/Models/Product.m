@@ -20,6 +20,7 @@
             self.name = dictionary[@"names"][@"title"];
             self.productImage = dictionary[@"images"][@"standard"];
             self.productSKU = dictionary[@"sku"];
+            self.productPrice = dictionary[@"prices"][@"regular"];
     }
     
         //...

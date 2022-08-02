@@ -31,6 +31,8 @@
 		F3DC293D2891C81B00ED72FD /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DC293C2891C81B00ED72FD /* DetailsViewController.m */; };
 		F3DC2940289236F400ED72FD /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DC293F289236F400ED72FD /* FilterViewController.m */; };
 		F3DC2943289237CD00ED72FD /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DC2942289237CD00ED72FD /* CategoryCollectionViewCell.m */; };
+		F3DC2947289887FF00ED72FD /* CategorySpecificViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DC2946289887FF00ED72FD /* CategorySpecificViewController.m */; };
+		F3DC294E28988A3700ED72FD /* TypeSpecificCells.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DC294D28988A3700ED72FD /* TypeSpecificCells.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,10 @@
 		F3DC293F289236F400ED72FD /* FilterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
 		F3DC2941289237CD00ED72FD /* CategoryCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionViewCell.h; sourceTree = "<group>"; };
 		F3DC2942289237CD00ED72FD /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewCell.m; sourceTree = "<group>"; };
+		F3DC2945289887FF00ED72FD /* CategorySpecificViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategorySpecificViewController.h; sourceTree = "<group>"; };
+		F3DC2946289887FF00ED72FD /* CategorySpecificViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategorySpecificViewController.m; sourceTree = "<group>"; };
+		F3DC294C28988A3700ED72FD /* TypeSpecificCells.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypeSpecificCells.h; sourceTree = "<group>"; };
+		F3DC294D28988A3700ED72FD /* TypeSpecificCells.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TypeSpecificCells.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,8 +288,20 @@
 			children = (
 				F3DC2941289237CD00ED72FD /* CategoryCollectionViewCell.h */,
 				F3DC2942289237CD00ED72FD /* CategoryCollectionViewCell.m */,
+				F3DC2945289887FF00ED72FD /* CategorySpecificViewController.h */,
+				F3DC2946289887FF00ED72FD /* CategorySpecificViewController.m */,
+				F3DC294B289889C700ED72FD /* Category Specific Cells */,
 			);
 			path = "Category View";
+			sourceTree = "<group>";
+		};
+		F3DC294B289889C700ED72FD /* Category Specific Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F3DC294C28988A3700ED72FD /* TypeSpecificCells.h */,
+				F3DC294D28988A3700ED72FD /* TypeSpecificCells.m */,
+			);
+			path = "Category Specific Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -532,7 +550,9 @@
 				F3DC2943289237CD00ED72FD /* CategoryCollectionViewCell.m in Sources */,
 				F3DC293D2891C81B00ED72FD /* DetailsViewController.m in Sources */,
 				F339B7D82878DCF90048E229 /* LoginViewController.m in Sources */,
+				F3DC2947289887FF00ED72FD /* CategorySpecificViewController.m in Sources */,
 				F3C557A828821DDE00754E01 /* Query Manager.m in Sources */,
+				F3DC294E28988A3700ED72FD /* TypeSpecificCells.m in Sources */,
 				F339B7D22878DCF80048E229 /* AppDelegate.m in Sources */,
 				F339B7E32878DCF90048E229 /* main.m in Sources */,
 				F339B7D52878DCF80048E229 /* SceneDelegate.m in Sources */,
