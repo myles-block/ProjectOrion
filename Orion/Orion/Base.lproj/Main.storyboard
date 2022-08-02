@@ -280,7 +280,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="person.fill" catalog="system" title=""/>
                                 <connections>
-                                    <segue destination="oci-ur-nbq" kind="presentation" id="JTk-fX-P4e"/>
+                                    <segue destination="hjq-6q-E2P" kind="presentation" modalPresentationStyle="fullScreen" id="est-QU-csl"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -541,7 +541,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4636.9230769230771" y="-265.16587677725119"/>
+            <point key="canvasLocation" x="4675" y="-265"/>
         </scene>
         <!--Item-->
         <scene sceneID="ppS-0c-koQ">
@@ -561,25 +561,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8V-vz-bZS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1928" y="-266"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="RvA-dm-gYd">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="oci-ur-nbq" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="0f9-80-JFl"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2L5-YV-i5u">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Eul-As-gH0" kind="relationship" relationship="rootViewController" id="g2P-47-LSt"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WJU-bk-T1w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3708" y="-266"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OEB-7K-ORl">
@@ -637,6 +618,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a19-Yx-7l8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1928" y="1809"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YmU-ef-5LM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hjq-6q-E2P" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JAZ-Wm-hBZ">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Eul-As-gH0" kind="relationship" relationship="rootViewController" id="15W-hf-wdk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hms-mk-SiM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3834" y="-265"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

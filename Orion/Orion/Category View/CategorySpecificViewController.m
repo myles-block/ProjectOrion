@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = [self.selectedCategoryID objectForKey:@"name"];
     self.typeSpecificTableView.dataSource = self;
     self.typeSpecificTableView.delegate = self;
     [self fetchCategoryTrendingProducts];
