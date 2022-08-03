@@ -13,6 +13,7 @@
 
 #import "HomeFeedViewController.h"
 #import "DetailsViewController.h"
+#import "SettingsViewController.h"
 #import "HomeFeedCell.h"
 #import "UIImageview+AFNetworking.h"
 #import "APIManager.h"
@@ -58,10 +59,17 @@ NSArray *data;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     //THIS SEGUE PASSES IN THE SELECTED PRODUCT FROM THE HOME FEED TABLE VIEW
-    NSIndexPath *index = self.feedTableView.indexPathForSelectedRow;
-    Product *dataToPass = self.trendingProductsFetch[index.row];
-    DetailsViewController *detailVC = [segue destinationViewController];
-    detailVC.selectedProduct = dataToPass;
+    if([[segue identifier] isEqualToString:@"settingsSegue"])
+    {
+        SettingsViewController *settingsVC = [segue destinationViewController];
+    }
+    else if([[segue identifier] isEqualToString:@"detailViewSegue"])
+    {
+        NSIndexPath *index = self.feedTableView.indexPathForSelectedRow;
+        Product *dataToPass = self.trendingProductsFetch[index.row];
+        DetailsViewController *detailVC = [segue destinationViewController];
+        detailVC.selectedProduct = dataToPass;
+    }
 }
 
 

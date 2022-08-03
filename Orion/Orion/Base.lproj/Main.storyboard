@@ -256,7 +256,7 @@
                                         <connections>
                                             <outlet property="productImage" destination="hbH-98-TX5" id="A9i-Sq-g6g"/>
                                             <outlet property="productName" destination="zRQ-ni-GWa" id="qqV-hn-Dec"/>
-                                            <segue destination="R47-jQ-LqU" kind="show" id="nhK-a9-aJ9"/>
+                                            <segue destination="R47-jQ-LqU" kind="show" identifier="detailViewSegue" id="nhK-a9-aJ9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -280,7 +280,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="person.fill" catalog="system" title=""/>
                                 <connections>
-                                    <segue destination="hjq-6q-E2P" kind="presentation" modalPresentationStyle="fullScreen" id="est-QU-csl"/>
+                                    <segue destination="hjq-6q-E2P" kind="presentation" identifier="settingsSegue" id="tfU-Jf-V21"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -383,34 +383,24 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22g-ga-Gyf">
-                                                    <rect key="frame" x="138" y="19" width="232" height="26.333333333333329"/>
+                                                    <rect key="frame" x="132" y="46" width="230" height="26"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fU0-hx-UZy">
-                                                    <rect key="frame" x="138" y="53.333333333333336" width="47" height="20.333333333333336"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="22g-ga-Gyf" secondAttribute="bottom" constant="51" id="11p-xv-eRB"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="22g-ga-Gyf" secondAttribute="trailing" constant="8" id="DeW-tl-2MN"/>
                                                 <constraint firstItem="jOx-7K-x7O" firstAttribute="leading" secondItem="yDw-yt-yQS" secondAttribute="leadingMargin" id="P4z-WU-zYw"/>
-                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="fU0-hx-UZy" secondAttribute="bottom" constant="49.329999999999998" id="PJY-yY-R2T"/>
-                                                <constraint firstItem="fU0-hx-UZy" firstAttribute="leading" secondItem="jOx-7K-x7O" secondAttribute="trailing" constant="14" id="RIi-Cz-KRv"/>
                                                 <constraint firstItem="jOx-7K-x7O" firstAttribute="top" secondItem="yDw-yt-yQS" secondAttribute="topMargin" id="RLx-xb-5be"/>
-                                                <constraint firstItem="22g-ga-Gyf" firstAttribute="leading" secondItem="jOx-7K-x7O" secondAttribute="trailing" constant="14" id="VqM-KZ-ASQ"/>
-                                                <constraint firstItem="22g-ga-Gyf" firstAttribute="top" secondItem="yDw-yt-yQS" secondAttribute="topMargin" constant="8" id="km6-oA-YcO"/>
-                                                <constraint firstItem="fU0-hx-UZy" firstAttribute="top" secondItem="22g-ga-Gyf" secondAttribute="bottom" constant="8" symbolic="YES" id="mIc-eO-fGF"/>
-                                                <constraint firstItem="22g-ga-Gyf" firstAttribute="trailing" secondItem="yDw-yt-yQS" secondAttribute="trailingMargin" id="uYB-nN-rJO"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="fU0-hx-UZy" secondAttribute="trailing" constant="185" id="ur6-w2-XqA"/>
+                                                <constraint firstItem="22g-ga-Gyf" firstAttribute="top" secondItem="yDw-yt-yQS" secondAttribute="topMargin" constant="35" id="aKD-OT-hKo"/>
+                                                <constraint firstItem="22g-ga-Gyf" firstAttribute="leading" secondItem="jOx-7K-x7O" secondAttribute="trailing" constant="8" symbolic="YES" id="n36-Dv-pvE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="typeSpecificImage" destination="jOx-7K-x7O" id="H2I-w3-gBd"/>
                                             <outlet property="typeSpecificName" destination="22g-ga-Gyf" id="wKd-KB-DpT"/>
-                                            <outlet property="typeSpecificPrice" destination="fU0-hx-UZy" id="9ot-iS-X96"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -622,7 +612,7 @@
         <!--Navigation Controller-->
         <scene sceneID="YmU-ef-5LM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hjq-6q-E2P" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="hjq-6q-E2P" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JAZ-Wm-hBZ">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>

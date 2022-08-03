@@ -12,34 +12,16 @@
 //TODO: Decide how to get categories to save within array of dictionaries or go with workaround...
 
 @interface FilterViewController ()<UICollectionViewDataSource>
-//@property (strong, nonatomic) NSArray *keys;
 @property (strong, nonatomic) NSArray *category_list;
 @end
 
 @implementation FilterViewController
 
-//static NSDictionary* categories = nil;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.filterCollectionView.dataSource = self;
     // Do any additional setup after loading the view.
-    
-    
-    
-//    //Dictionary of Categories:
-//
-//    if (!categories) {
-//        categories = @{@"Cell Phones": @"abcat0800000",
-//                       @"Cell Phone Accessories": @"abcat0811002",
-//                       @"Cell Phone Cases": @"abcat0811006",
-//                       @"Adapters & Cables": @"abcat0811007",
-//                       @"Movies & Music": @"abcat0600000",
-//                       @"Video Games": @"abcat0700000"};
-//
-//    }
-//
-//    self.keys = [categories allKeys];//sets all the keys to an array
     
     self.category_list = @[
     @{@"name": @"Adapters & Cables", @"id": @"abcat0811007"},
@@ -88,15 +70,12 @@
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CategoryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCollectionViewCell" forIndexPath:indexPath];
     NSDictionary *category_dict = self.category_list[indexPath.row];//dicitonary embedded in each category list
-    NSString *category_name = [category_dict objectForKey:@"name"];
-//    NSLog(@"%@", category_name);
     cell.categoryLabel.text = [category_dict objectForKey: @"name"];
 //    NSLog(@"%@", [category_dict objectForKey:@"name"]);
     return cell;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-//    int totalColors = 100;
     return self.category_list.count;
 }
 @end
