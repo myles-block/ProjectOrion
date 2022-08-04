@@ -6,12 +6,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>//needed for CGFloat
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Product : NSObject
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *productImage;
+@property (nonatomic, strong) NSString *productSKU;
+@property (nonatomic, strong) NSString *productPrice;
+//@property CGFloat *productPrice;
+
+
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;//intializer for home feed product dictionary (implementation in .m file)
 

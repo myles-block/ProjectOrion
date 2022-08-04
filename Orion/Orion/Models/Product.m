@@ -13,10 +13,16 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     //sets up intializer for initWithDictionary
-
-    if (self) {
-        self.name = dictionary[@"names"][@"title"];
-        self.productImage = dictionary[@"images"][@"standard"];
+    
+    if(self.name == NULL)
+    {
+        if (self) {
+            self.name = dictionary[@"names"][@"title"];
+            self.productImage = dictionary[@"images"][@"standard"];
+            self.productSKU = dictionary[@"sku"];
+            self.productPrice = dictionary[@"prices"][@"regular"];
+    }
+    
         //...
     // Initialize any other properties
     }
@@ -32,5 +38,8 @@
     }
     return products;
 }
+ 
+
+
 
 @end
