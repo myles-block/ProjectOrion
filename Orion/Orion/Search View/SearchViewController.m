@@ -32,12 +32,14 @@
     self.searchTableView.dataSource = self;
     self.searchBar.delegate = self;
     
+    self.listOfResultNames = [[NSMutableArray alloc] init];
     [[APIManager shared] getSearching:(@"ipad") completion:^(NSArray *products) {
         if (products) {
-            NSLog(@"😎😎😎 Successfully loaded homefeed timeline");
+            NSLog(@"😎😎😎 Committed Search");
             for (Product *product in products) {
                 NSString *text = product.name;
-                [self.listOfResultNames addObject:text];
+                self.listOfResultNames = (NSMutableArray *) products;
+//                [self.listOfResultNames addObject:text];
                 NSLog(@"%@", text);
             }
             
