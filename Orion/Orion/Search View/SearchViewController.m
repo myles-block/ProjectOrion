@@ -7,10 +7,14 @@
 
 #import "SearchViewController.h"
 #import "SearchTableViewCell.h"
+#import "APIManager.h"
 
 @interface SearchViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *searchTableView;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property (strong, nonatomic) NSMutableArray *listOfResultNames;//list of product labels
+
 
 @property (strong, nonatomic) NSArray *data;
 @property (strong, nonatomic) NSArray *filteredData;
@@ -28,14 +32,26 @@
     self.searchTableView.dataSource = self;
     self.searchBar.delegate = self;
     
+    [[APIManager shared] getSearching:(@"ipad") completion:^(NSArray *products) {
+        if (products) {
+            NSLog(@"😎😎😎 Successfully loaded homefeed timeline");
+            for (Product *product in products) {
+                NSString *text = product.name;
+                [self.listOfResultNames addObject:text];
+                NSLog(@"%@", text);
+            }
+            
+//            self.data = products;
+        }}];
+    
     //TestCode!
-    self.data = @[@"New York, NY", @"Los Angeles, CA", @"Chicago, IL", @"Houston, TX",
-                      @"Philadelphia, PA", @"Phoenix, AZ", @"San Diego, CA", @"San Antonio, TX",
-                      @"Dallas, TX", @"Detroit, MI", @"San Jose, CA", @"Indianapolis, IN",
-                      @"Jacksonville, FL", @"San Francisco, CA", @"Columbus, OH", @"Austin, TX",
-                      @"Memphis, TN", @"Baltimore, MD", @"Charlotte, ND", @"Fort Worth, TX"];
+//    self.data = @[@"New York, NY", @"Los Angeles, CA", @"Chicago, IL", @"Houston, TX",
+//                      @"Philadelphia, PA", @"Phoenix, AZ", @"San Diego, CA", @"San Antonio, TX",
+//                      @"Dallas, TX", @"Detroit, MI", @"San Jose, CA", @"Indianapolis, IN",
+//                      @"Jacksonville, FL", @"San Francisco, CA", @"Columbus, OH", @"Austin, TX",
+//                      @"Memphis, TN", @"Baltimore, MD", @"Charlotte, ND", @"Fort Worth, TX"];
 
-        self.filteredData = self.data;
+        self.filteredData = self.listOfResultNames;
     // Do any additional setup after loading the view.
 }
 

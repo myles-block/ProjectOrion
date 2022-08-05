@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)shared;
 - (void)getHomeFeedTrending:(void(^)(NSArray *products))completion;
 - (void)getCategorySpecificTrending:(NSDictionary *)passedCategoryInfo completion:(void(^)(NSArray *products))completion;
+- (void)getSearching:(NSString *)passedSearchWord completion:(void(^)(NSArray *products))completion;
 
 - (void)getProductSpecs:(Product *)passedItem;
 

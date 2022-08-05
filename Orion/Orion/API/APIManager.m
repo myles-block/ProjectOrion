@@ -80,6 +80,30 @@ static NSString * const productAPIURLString = @"https://api.bestbuy.com/v1/produ
         [task resume];
 }
 
+- (void)getSearching:(NSString *)passedSearchWord completion:(void(^)(NSArray *products))completion {
+    NSString *searchParam = [NSString stringWithFormat:@"%@%@%@%@%@", productAPIURLString, @"(name=", passedSearchWord, @"*)?format=json&show=sku,name,regularPrice,image&pageSize=10&apiKey=" ,self.api_key];
+    NSLog(@"%@", searchParam);
+    NSString* webStringURL = [searchParam stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];//adds percent to spaces so they can be processed if needed
+    NSURL *url = [NSURL URLWithString:webStringURL];
+    NSLog(@"%@", url);
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:20.0];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+           if (error != nil) {
+               NSLog(@"%@", [error localizedDescription]);
+           }
+           else {
+               NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+               NSArray *resultsArray = dataDictionary[@"products"];//results array of trending products
+               NSMutableArray *searchProducts = [Product productsWithProductAPIArray:resultsArray];
+               NSLog(@"%@", @"Logged✅✅✅");
+               NSLog(@"%@", searchProducts);
+               completion(searchProducts);
+           }
+       }];
+    [task resume];
+}
+
 //PAUSED on this setup
 - (void)getProductSpecs:(Product *)passedItem {
     //passes into Product

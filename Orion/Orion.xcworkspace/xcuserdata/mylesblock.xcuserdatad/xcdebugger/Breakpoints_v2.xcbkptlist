@@ -7,64 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "91F270C4-3A4B-484C-AF1B-32B0F79AEAFC"
+            uuid = "B3B67065-A9E5-4098-A567-79446ABE10EA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Orion/Search View/SearchViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "-searchBar:textDidChange:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "91F270C4-3A4B-484C-AF1B-32B0F79AEAFC - 5b93e1ff381b5dd6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[SearchViewController searchBar:textDidChange:]"
-                  moduleName = "Orion"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mylesblock/Documents/GitHub/ProjectOrion/Orion/Orion/Search%20View/SearchViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "380">
-               </Location>
-               <Location
-                  uuid = "91F270C4-3A4B-484C-AF1B-32B0F79AEAFC - 5b93e1ff381b5dd6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[SearchViewController searchBar:textDidChange:]"
-                  moduleName = "Orion"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mylesblock/Documents/GitHub/ProjectOrion/Orion/Orion/Search%20View/SearchViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "396">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4AC917E3-994D-4702-A576-8BA4FE3E8AC5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Orion/API/APIManager.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "-getProductSpecs:"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
