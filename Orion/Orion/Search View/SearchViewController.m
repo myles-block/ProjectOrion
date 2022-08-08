@@ -8,16 +8,17 @@
 #import "SearchViewController.h"
 #import "SearchTableViewCell.h"
 #import "APIManager.h"
+#import "UIImageview+AFNetworking.h"
 #import "Product.h"
 
 @interface SearchViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *searchTableView;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
-@property (strong, nonatomic) NSMutableArray *listOfResultNames;//list of product labels
-@property (strong, nonatomic) NSArray *rootListofProducts;//this is the root list of products returned from API Manager...might delete
+@property (strong, nonatomic) NSMutableArray *listOfResultNames;//deprecated
+@property (strong, nonatomic) NSArray *rootListofProducts;//deprecated delete
 
-@property (strong, nonatomic) NSArray *data;//deprecated
+@property (strong, nonatomic) NSMutableArray *data;//array of products
 @property (strong, nonatomic) NSArray *filteredData;
 
 @end
@@ -33,38 +34,14 @@
     self.searchTableView.dataSource = self;
     self.searchBar.delegate = self;
     
-    self.listOfResultNames = [[NSMutableArray alloc] init];
-    
-    
-    [self fetchSearch];
-    
-    //TestCode!
-//    self.data = @[@"New York, NY", @"Los Angeles, CA", @"Chicago, IL", @"Houston, TX",
-//                      @"Philadelphia, PA", @"Phoenix, AZ", @"San Diego, CA", @"San Antonio, TX",
-//                      @"Dallas, TX", @"Detroit, MI", @"San Jose, CA", @"Indianapolis, IN",
-//                      @"Jacksonville, FL", @"San Francisco, CA", @"Columbus, OH", @"Austin, TX",
-//                      @"Memphis, TN", @"Baltimore, MD", @"Charlotte, ND", @"Fort Worth, TX"];
-
-//        self.filteredData = self.listOfResultNames;
-    // Do any additional setup after loading the view.
 }
 
-- (void) fetchSearch {
-    [[APIManager shared] getSearching:(@"ipad") completion:^(NSArray *products) {
+- (void) fetchSearch: (NSString *)input {
+    [[APIManager shared] getSearching:(input) completion:^(NSArray *products) {
         if (products) {
             NSLog(@"😎😎😎 Committed Search");
-            for (Product *product in products) {
-                NSString *text = product.name;
-                NSLog(@"%@", text);
-//                self.listOfResultNames = (NSMutableArray *) products;
-                [self.listOfResultNames addObject:text];
-            }
-            
-            self.filteredData = self.listOfResultNames;
-//            self.rootListofProducts = (NSMutableArray *) products;//shifts products to rootListofProducts
-//            self.filteredData = self.rootListofProducts;
+            self.data = (NSMutableArray *) products;//sets array of products to data array
             [self.searchTableView reloadData];
-//            self.data = products;
         }}];
 }
 
@@ -80,35 +57,21 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     SearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchCell" forIndexPath:indexPath];
-       cell.resultProductLabel.text = self.filteredData[indexPath.row];
-       
+    Product *indexProduct = self.data[indexPath.row];//product in tableview
+    cell.resultProductLabel.text = indexProduct.name;//sets product text to cell text
+    NSString *posterURLString = indexProduct.productImage;//sets products image to search image
+    NSURL *posterURL = [NSURL URLWithString:posterURLString];
+    [cell.resultImage setImageWithURL:posterURL];//sets products in image to search image
        return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.filteredData.count;
+    return self.data.count;
 }
-
 
 //MARK: Search Bar Functions
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    
-    if (searchText.length != 0) {
-        
-        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSString *evaluatedObject, NSDictionary *bindings) {
-            return [evaluatedObject containsString:searchText];
-        }];
-        self.filteredData = [self.listOfResultNames filteredArrayUsingPredicate:predicate];
-        
-        NSLog(@"%@", self.filteredData);
-        
-    }
-    else {
-        self.filteredData = self.listOfResultNames;
-    }
-    
-    [self.searchTableView reloadData];
- 
+    [self fetchSearch:searchText];//calls API each time text changes
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {//shows cancel button on search bar
@@ -120,50 +83,5 @@
     self.searchBar.text = @"";//sets text field to empty
     [self.searchBar resignFirstResponder];
 }
-
-
-//- (void)encodeWithCoder:(nonnull NSCoder *)coder {
-//    <#code#>
-//}
-//
-//- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection {
-//    <#code#>
-//}
-//
-//- (void)preferredContentSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
-//    <#code#>
-//}
-//
-//- (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
-//    <#code#>
-//}
-//
-//- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
-//    <#code#>
-//}
-//
-//- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-//    <#code#>
-//}
-//
-//- (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-//    <#code#>
-//}
-//
-//- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator {
-//    <#code#>
-//}
-//
-//- (void)setNeedsFocusUpdate {
-//    <#code#>
-//}
-//
-//- (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context {
-//    <#code#>
-//}
-//
-//- (void)updateFocusIfNeeded {
-//    <#code#>
-//}
 
 @end

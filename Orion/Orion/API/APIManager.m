@@ -107,6 +107,7 @@ static NSString * const productAPIURLString = @"https://api.bestbuy.com/v1/produ
 //PAUSED on this setup
 - (void)getProductSpecs:(Product *)passedItem {
     //passes into Product
+    //whereamiat: got request link, work on product assignment in product model class (debating where to create a new object within method or add additional signs)...can do both with if(self)
     NSString *productAPILink = [NSString stringWithFormat:@"%@%@%@%@%@%@", productAPIURLString, @"(sku=", passedItem.productSKU, @")?apiKey=",self.api_key, @"&sort=image.asc&show=image,regularPrice,description,longDescription,shortDescription,name,leftViewImage,rightViewImage,topViewImage,backViewImage,accessoriesImage&pageSize=100&format=json"];
     NSURL *url = [NSURL URLWithString:productAPILink];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:20.0];
