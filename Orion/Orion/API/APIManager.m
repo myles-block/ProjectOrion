@@ -107,7 +107,7 @@ static NSString * const productAPIURLString = @"https://api.bestbuy.com/v1/produ
 //PAUSED on this setup
 - (void)getProductSpecs:(Product *)passedItem {
     //passes into Product
-    NSString *productAPILink = [NSString stringWithFormat:@"%@%@%@%@%@%@", productAPIURLString, @"(sku=", passedItem.productSKU, @")?apiKey=",self.api_key, @"&sort=longDescription.asc&show=longDescription,shortDescription,description,manufacturer,color,sku&format=json"];
+    NSString *productAPILink = [NSString stringWithFormat:@"%@%@%@%@%@%@", productAPIURLString, @"(sku=", passedItem.productSKU, @")?apiKey=",self.api_key, @"&sort=image.asc&show=image,regularPrice,description,longDescription,shortDescription,name,leftViewImage,rightViewImage,topViewImage,backViewImage,accessoriesImage&pageSize=100&format=json"];
     NSURL *url = [NSURL URLWithString:productAPILink];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:20.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
@@ -118,7 +118,7 @@ static NSString * const productAPIURLString = @"https://api.bestbuy.com/v1/produ
            else {
                NSDictionary *givenRequest = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                //TODO: Change the code below (and test request)
-               NSArray *productInfo = givenRequest[@"products"];//results array of trending products
+               NSArray *productInfo = givenRequest[@"products"];//results array of product specs(pulls the specific product)
 //               NSMutableArray *trendingProducts = [Product productsWithArray:productInfo];
                NSLog(@"%@", @"LoggedProductSpecs✅✅✅");
            }

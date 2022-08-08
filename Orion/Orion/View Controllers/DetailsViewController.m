@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[APIManager shared] getProductSpecs: self.selectedProduct];
     // Do any additional setup after loading the view.
 }
 

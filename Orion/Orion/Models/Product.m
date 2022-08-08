@@ -58,6 +58,14 @@ static bool productAPICheck = false;
     return self;
 }
 
+//- (instancetype)addedWithProductSpec:(Product *)dictionary {
+//    self = [self init];
+//    
+//    if(self) {
+//        
+//    }
+//}
+
 
 + (NSMutableArray *)productsWithArray:(NSArray *)dictionaries {
     NSMutableArray *products = [NSMutableArray array];
@@ -78,6 +86,10 @@ static bool productAPICheck = false;
     }
     return products;
 }
+
+//+ (Product *)detailProductAdditions: (Product *)sentProduct {
+//    
+//}
  
 
 
