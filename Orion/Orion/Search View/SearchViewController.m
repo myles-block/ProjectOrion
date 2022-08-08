@@ -8,15 +8,16 @@
 #import "SearchViewController.h"
 #import "SearchTableViewCell.h"
 #import "APIManager.h"
+#import "Product.h"
 
 @interface SearchViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *searchTableView;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (strong, nonatomic) NSMutableArray *listOfResultNames;//list of product labels
+@property (strong, nonatomic) NSArray *rootListofProducts;//this is the root list of products returned from API Manager...might delete
 
-
-@property (strong, nonatomic) NSArray *data;
+@property (strong, nonatomic) NSArray *data;//deprecated
 @property (strong, nonatomic) NSArray *filteredData;
 
 @end
@@ -38,11 +39,15 @@
             NSLog(@"😎😎😎 Committed Search");
             for (Product *product in products) {
                 NSString *text = product.name;
-                self.listOfResultNames = (NSMutableArray *) products;
-//                [self.listOfResultNames addObject:text];
                 NSLog(@"%@", text);
+//                self.listOfResultNames = (NSMutableArray *) products;
+                [self.listOfResultNames addObject:text];
             }
             
+            self.filteredData = self.listOfResultNames;
+//            self.rootListofProducts = (NSMutableArray *) products;//shifts products to rootListofProducts
+//            self.filteredData = self.rootListofProducts;
+            [self.searchTableView reloadData];
 //            self.data = products;
         }}];
     
@@ -53,7 +58,7 @@
 //                      @"Jacksonville, FL", @"San Francisco, CA", @"Columbus, OH", @"Austin, TX",
 //                      @"Memphis, TN", @"Baltimore, MD", @"Charlotte, ND", @"Fort Worth, TX"];
 
-        self.filteredData = self.listOfResultNames;
+//        self.filteredData = self.listOfResultNames;
     // Do any additional setup after loading the view.
 }
 
@@ -87,13 +92,13 @@
         NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSString *evaluatedObject, NSDictionary *bindings) {
             return [evaluatedObject containsString:searchText];
         }];
-        self.filteredData = [self.data filteredArrayUsingPredicate:predicate];
+        self.filteredData = [self.listOfResultNames filteredArrayUsingPredicate:predicate];
         
         NSLog(@"%@", self.filteredData);
         
     }
     else {
-        self.filteredData = self.data;
+        self.filteredData = self.listOfResultNames;
     }
     
     [self.searchTableView reloadData];

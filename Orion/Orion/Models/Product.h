@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;//intializer for home feed product dictionary (implementation in .m file)
 
+- (instancetype)initWithProductAPIDictionary:(NSDictionary *)dictionary;
+
 + (NSMutableArray *)productsWithArray:(NSArray *)dictionaries;//parses through results and calls intializer function
 
 + (NSMutableArray *)productsWithProductAPIArray: (NSArray *)dictionaries;//parses through product array and calls intializer function
