@@ -108,7 +108,7 @@ static NSString * const productAPIURLString = @"https://api.bestbuy.com/v1/produ
 - (void)getProductSpecs:(Product *)passedItem {
     //passes into Product
     NSString *productAPILink = [NSString stringWithFormat:@"%@%@%@%@%@%@", productAPIURLString, @"(sku=", passedItem.productSKU, @")?apiKey=",self.api_key, @"&sort=longDescription.asc&show=longDescription,shortDescription,description,manufacturer,color,sku&format=json"];
-    NSURL *url = [NSURL URLWithString:productAPIURLString];
+    NSURL *url = [NSURL URLWithString:productAPILink];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:20.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {

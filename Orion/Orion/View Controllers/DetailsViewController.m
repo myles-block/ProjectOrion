@@ -6,6 +6,8 @@
 //
 
 #import "DetailsViewController.h"
+#import "APIManager.h"
+#import "Product.h"
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
