@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //Grabs the info from the segue and sets it equal to the needed terms when switched view
     [[APIManager shared] getProductSpecs:self.selectedProduct completion:^(Product *product) {
         self.productNameLabel.text = product.name;
         self.productDescriptionTextView.text = product.productDescription;
@@ -50,6 +51,11 @@
     if (sender.state == UIGestureRecognizerStateRecognized) {
         [self triggerAlert];
         NSString *currentUserID = PFUser.currentUser.objectId;
+//        [Query_Manager pushProductToBookmark:self.selectedProduct :currentUserID withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+//            if(succeeded){
+//                
+//            }
+//        }];
         [Query_Manager saveProductToBookmark:self.selectedProduct:currentUserID withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
             if(succeeded){
                 NSLog(@"BOOKMARKED!!!");

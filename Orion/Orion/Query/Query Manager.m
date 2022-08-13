@@ -89,6 +89,13 @@
     
 }
 
++ (void) pushProductToBookmark:(Product *)bookmarkedProduct :(NSString *)objectID withCompletion: (PFBooleanResultBlock _Nullable)completion {
+    [[PFUser  currentUser] addObject:bookmarkedProduct forKey:@"test"];
+    [[PFUser currentUser] saveInBackground];
+}
+//grab selected product, take it's values then upload to back4app when saved...then repull array from back4app
+//theory failed, continue try saving to background
+
 
 
 @end

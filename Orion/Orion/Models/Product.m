@@ -81,7 +81,7 @@
     Product *new_product = [Product new];
     
     if(self) {
-        //Back4App Declarations
+        //MARK: Back4App Declarations
         new_product.name = self.name;
         new_product.productImage = self.productImage;
         new_product.productSKU = self.productSKU;
