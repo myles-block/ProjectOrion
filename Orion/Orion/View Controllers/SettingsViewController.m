@@ -10,8 +10,10 @@
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
 #import "Query Manager.h"
+#import "UIImageview+AFNetworking.h"
 
 @interface SettingsViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property (strong, nonatomic) IBOutlet UILabel *profileName;
 
 @end
 
@@ -21,6 +23,15 @@
     [super viewDidLoad];
     self.selectedProfilePhotoImageView.clipsToBounds = YES;
     self.selectedProfilePhotoImageView.layer.cornerRadius = 125;
+    
+    NSString *currentUserID = PFUser.currentUser.objectId;
+    [Query_Manager getImagefromParse:currentUserID completion:^(NSURL * _Nonnull returnURL, PFObject * _Nonnull thisCurrentUser) {
+        if(returnURL)
+        {
+            [self.selectedProfilePhotoImageView setImageWithURL:returnURL];
+            self.profileName.text = thisCurrentUser[@"username"];
+        }
+    }];
     
     // Do any additional setup after loading the view.
 }
@@ -39,13 +50,13 @@
     imagePickerVC.allowsEditing = YES;//allows editing
 
     // The Xcode simulator does not support taking pictures, so let's first check that the camera is indeed supported on the device before trying to present it.
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {//checks if camera is supported
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-    else {
+//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {//checks if camera is supported
+//        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+//    }
+//    else {
         NSLog(@"Camera 🚫 available so we will use photo library instead");
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;//sets sourceType for controller to photo library
-    }
+//    }
 
     [self presentViewController:imagePickerVC animated:YES completion:nil];//presents image picker
 }

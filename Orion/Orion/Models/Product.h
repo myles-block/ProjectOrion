@@ -6,11 +6,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 #import <UIKit/UIKit.h>//needed for CGFloat
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Product : NSObject
+@interface Product : PFObject<PFSubclassing>
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *productImage;
 @property (nonatomic, strong) NSString *productSKU;
@@ -31,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (Product *)productDetailAddition: (NSArray *)dictionaries :(Product *)givenProduct;
 
++ (NSMutableArray *)productCreationviaSKU: (NSArray *)dictionaries;
 
 @end
 

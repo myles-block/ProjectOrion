@@ -30,6 +30,7 @@
 		F3BBD51428A4F2D80056A898 /* TrieAutocomplete.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BBD51328A4F2D80056A898 /* TrieAutocomplete.m */; };
 		F3BBD51728A4FD120056A898 /* TrieNode.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BBD51628A4FD120056A898 /* TrieNode.m */; };
 		F3BBD51A28A7044E0056A898 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BBD51928A7044E0056A898 /* BookmarkViewController.m */; };
+		F3BBD51E28A766430056A898 /* BookmarkCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BBD51D28A766430056A898 /* BookmarkCollectionViewCell.m */; };
 		F3C402DF287C98740061AC85 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C402DE287C98740061AC85 /* SignInViewController.m */; };
 		F3C557A828821DDE00754E01 /* Query Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C557A728821DDE00754E01 /* Query Manager.m */; };
 		F3DC293D2891C81B00ED72FD /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DC293C2891C81B00ED72FD /* DetailsViewController.m */; };
@@ -104,6 +105,8 @@
 		F3BBD51628A4FD120056A898 /* TrieNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrieNode.m; sourceTree = "<group>"; };
 		F3BBD51828A7044E0056A898 /* BookmarkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookmarkViewController.h; sourceTree = "<group>"; };
 		F3BBD51928A7044E0056A898 /* BookmarkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookmarkViewController.m; sourceTree = "<group>"; };
+		F3BBD51C28A766430056A898 /* BookmarkCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookmarkCollectionViewCell.h; sourceTree = "<group>"; };
+		F3BBD51D28A766430056A898 /* BookmarkCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookmarkCollectionViewCell.m; sourceTree = "<group>"; };
 		F3C402DD287C98740061AC85 /* SignInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		F3C402DE287C98740061AC85 /* SignInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		F3C557A628821DDE00754E01 /* Query Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Query Manager.h"; sourceTree = "<group>"; };
@@ -319,6 +322,8 @@
 			children = (
 				F3BBD51828A7044E0056A898 /* BookmarkViewController.h */,
 				F3BBD51928A7044E0056A898 /* BookmarkViewController.m */,
+				F3BBD51C28A766430056A898 /* BookmarkCollectionViewCell.h */,
+				F3BBD51D28A766430056A898 /* BookmarkCollectionViewCell.m */,
 			);
 			path = "Bookmark View";
 			sourceTree = "<group>";
@@ -596,6 +601,7 @@
 				F3020EA02888C7250081E854 /* Product.m in Sources */,
 				F3BBD51428A4F2D80056A898 /* TrieAutocomplete.m in Sources */,
 				F3A6B65D287CC8570014BA61 /* HomeFeedViewController.m in Sources */,
+				F3BBD51E28A766430056A898 /* BookmarkCollectionViewCell.m in Sources */,
 				F3DC2940289236F400ED72FD /* FilterViewController.m in Sources */,
 				F3DC2943289237CD00ED72FD /* CategoryCollectionViewCell.m in Sources */,
 				F3554F8D289C9DC30066D3F2 /* SearchTableViewCell.m in Sources */,

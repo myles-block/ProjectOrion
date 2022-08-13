@@ -10,7 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BookmarkViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UICollectionView *bookmarkCollectionView;
 
+@property (strong, nonatomic) NSArray *bookmarkedSKUList;
 @end
 
 NS_ASSUME_NONNULL_END

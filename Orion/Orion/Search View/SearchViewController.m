@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Search";
+//    self.title = @"Search";
     
     
     self.searchTableView.delegate = self;

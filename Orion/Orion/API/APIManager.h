@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)getProductSpecs:(Product *)passedItem completion:(void(^)(Product *product))completion;
 
+- (void)getProductfromSKU:(NSString *)passedSKU completion:(void(^)(NSArray *products))completion;
 @end
 
 NS_ASSUME_NONNULL_END

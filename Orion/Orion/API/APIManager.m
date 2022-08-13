@@ -106,7 +106,7 @@ static NSString * const productAPIURLString = @"https://api.bestbuy.com/v1/produ
 }
 
 //PAUSED on this setup
-- (void)getProductSpecs:(Product *)passedItem completion:(void(^)(Product *product))completion{
+- (void)getProductSpecs:(Product *)passedItem completion:(void(^)(Product *product))completion{//works when given a product and want to add rest of data
     //passes into Product
     //whereamiat: got request link, work on product assignment in product model class (debating where to create a new object within method or add additional signs)...can do both with if(self)
     NSString *productAPILink = [NSString stringWithFormat:@"%@%@%@%@%@%@", productAPIURLString, @"(sku=", passedItem.productSKU, @")?apiKey=",self.api_key, @"&sort=image.asc&show=image,regularPrice,description,longDescription,shortDescription,name,leftViewImage,rightViewImage,topViewImage,backViewImage,accessoriesImage&pageSize=100&format=json"];
@@ -130,6 +130,28 @@ static NSString * const productAPIURLString = @"https://api.bestbuy.com/v1/produ
     [task resume];
 }
 
+- (void)getProductfromSKU:(NSString *)passedSKU completion:(void(^)(NSArray *products))completion{//works when given a product and want to add rest of data
+    //passes into Product
+    //whereamiat: got request link, work on product assignment in product model class (debating where to create a new object within method or add additional signs)...can do both with if(self)
+    NSString *productAPILink = [NSString stringWithFormat:@"%@%@%@%@%@%@", productAPIURLString, @"(sku=", passedSKU, @")?apiKey=",self.api_key, @"&sort=image.asc&show=sku,image,regularPrice,description,longDescription,shortDescription,name,leftViewImage,rightViewImage,topViewImage,backViewImage,accessoriesImage&pageSize=100&format=json"];
+    NSURL *url = [NSURL URLWithString:productAPILink];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:20.0];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+           if (error != nil) {
+               NSLog(@"%@", [error localizedDescription]);
+           }
+           else {
+               NSDictionary *givenRequest = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+               //TODO: Change the code below (and test request)
+               NSArray *productInfo = givenRequest[@"products"];//results array of product specs(pulls the specific product)
+//               NSMutableArray *trendingProducts = [Product productsWithArray:productInfo];
+               NSMutableArray *searchProducts = [Product productCreationviaSKU:productInfo];
+               completion(searchProducts);
+           }
+       }];
+    [task resume];
+}
 
 
 @end
