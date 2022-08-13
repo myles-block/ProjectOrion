@@ -15,9 +15,6 @@
 @property (strong, nonatomic) IBOutlet UITableView *searchTableView;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
-@property (strong, nonatomic) NSMutableArray *listOfResultNames;//deprecated
-@property (strong, nonatomic) NSArray *rootListofProducts;//deprecated delete
-
 @property (strong, nonatomic) NSMutableArray *data;//array of products
 @property (strong, nonatomic) NSArray *filteredData;
 

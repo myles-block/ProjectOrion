@@ -8,6 +8,7 @@
 #import "DetailsViewController.h"
 #import "APIManager.h"
 #import "Product.h"
+#import "UIImageview+AFNetworking.h"
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
@@ -18,7 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[APIManager shared] getProductSpecs: self.selectedProduct];
+    [[APIManager shared] getProductSpecs:self.selectedProduct completion:^(Product *product) {
+        self.productNameLabel.text = product.name;
+        self.productDescription.text = product.productDescription;
+        self.productPrice.text = product.productPrice;
+        NSString *posterURLString = product.productImage;
+        NSURL *posterURL = [NSURL URLWithString:posterURLString];
+        [self.productImage setImageWithURL:posterURL];
+    }];
+    
     // Do any additional setup after loading the view.
 }
 

@@ -58,13 +58,18 @@ static bool productAPICheck = false;
     return self;
 }
 
-//- (instancetype)addedWithProductSpec:(Product *)dictionary {
-//    self = [self init];
-//    
-//    if(self) {
-//        
-//    }
-//}
+- (instancetype)initWithProductSpecs:(NSDictionary *)dictionary :(Product *)product{
+    self = product;
+    
+    if(self) {
+        self.productDescription = dictionary[@"longDescription"];
+        NSNumber *price = dictionary[@"regularPrice"];
+        self.productPrice = [@"$" stringByAppendingString:[price stringValue]];
+    }
+    return self;
+    
+}
+
 
 
 + (NSMutableArray *)productsWithArray:(NSArray *)dictionaries {
@@ -85,6 +90,13 @@ static bool productAPICheck = false;
         [products addObject:product];
     }
     return products;
+}
+
++ (Product *)productDetailAddition: (NSArray *)dictionaries :(Product *)givenProduct{
+    for (NSDictionary *dictionary in dictionaries){
+        [[Product alloc] initWithProductSpecs:dictionary :givenProduct];
+    }
+    return givenProduct;
 }
 
 //+ (Product *)detailProductAdditions: (Product *)sentProduct {

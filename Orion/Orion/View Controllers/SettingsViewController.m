@@ -19,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.selectedProfilePhotoImageView.clipsToBounds = YES;
+    self.selectedProfilePhotoImageView.layer.cornerRadius = 125;
+    
     // Do any additional setup after loading the view.
 }
 

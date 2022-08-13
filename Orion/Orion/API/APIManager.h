@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getCategorySpecificTrending:(NSDictionary *)passedCategoryInfo completion:(void(^)(NSArray *products))completion;
 - (void)getSearching:(NSString *)passedSearchWord completion:(void(^)(NSArray *products))completion;
 
-- (void)getProductSpecs:(Product *)passedItem;
+- (void)getProductSpecs:(Product *)passedItem completion:(void(^)(Product *product))completion;
 
 @end
 

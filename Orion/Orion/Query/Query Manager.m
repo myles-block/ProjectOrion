@@ -28,5 +28,7 @@
     return [PFFileObject fileObjectWithName:@"ProfileImage.png" data:imageData];
 }
 
+//+ (PFFileObject *)getImagefromParse:
+
 
 @end
