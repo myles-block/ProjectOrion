@@ -12,10 +12,12 @@
 #import "Product.h"
 #import "UIImageview+AFNetworking.h"
 #import "BookmarkCollectionViewCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 
 @interface BookmarkViewController ()<UICollectionViewDataSource>
-@property (strong, nonatomic) NSMutableArray *arrayOfBookmarkedProducts;
+@property (strong, nonatomic) NSArray *arrayOfBookmarkedProducts;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @end
 
 @implementation BookmarkViewController
@@ -23,28 +25,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.title = @"Bookmarked";
+    
+//        TrieNode *root = [[TrieNode alloc] init];//root TrieNode
+//        [TrieAutocomplete insert:root :@"test"];//isWord?
+//        [TrieAutocomplete insert:root :@"tesseract"];
+//        [TrieAutocomplete insert:root :@"testable"];
+//
+
     self.bookmarkCollectionView.dataSource = self;
+    [self fetchBookmarked];
+    self.refreshControl = [[UIRefreshControl alloc] init];//connects refreshcontrol to self
+    [self.refreshControl addTarget:self action: @selector(fetchBookmarked) forControlEvents:UIControlEventValueChanged];//when beginning of refresh control is triggered it reruns fetchMovies
+    self.bookmarkCollectionView.refreshControl = self.refreshControl;//end of refreshControl
     
     NSString *currentUserID = PFUser.currentUser.objectId;
-    [Query_Manager getBookmarked:currentUserID completion:^(NSMutableArray * _Nonnull bookmarkList) {
+    [Query_Manager getBookmarked:currentUserID completion:^(NSArray * _Nonnull bookmarkList) {
         if(bookmarkList)
         {
-            self.bookmarkedSKUList = bookmarkList;
-            NSMutableArray *myArray = [[NSMutableArray alloc] init];
-            for(NSString *item in self.bookmarkedSKUList)
-            {
-                [[APIManager shared] getProductfromSKU:item completion:^(NSArray *products) {
-                    if (products)
-                    {
-            //            self.arrayOfBookmarkedProducts = (NSMutableArray *) products;
-                        [myArray addObject:[products firstObject]];
-//                        [self.arrayOfBookmarkedProducts addObject:[products firstObject]];
-                        [self.bookmarkCollectionView reloadData];
-                    }
-                    
-                }];
-            }
-            self.arrayOfBookmarkedProducts = (NSMutableArray *)myArray;
+            self.arrayOfBookmarkedProducts = bookmarkList;
+            [self.bookmarkCollectionView reloadData];
         }
     }];
 //    TrieNode *root = [[TrieNode alloc] init];//root TrieNode
@@ -54,15 +53,15 @@
     // Do any additional setup after loading the view.
 }
 
-- (void) fetchBookmarked: (NSString *)item {
-    [[APIManager shared] getProductfromSKU:item completion:^(NSArray *products) {
-        if (products)
+- (void) fetchBookmarked {
+    NSString *currentUserID = PFUser.currentUser.objectId;
+    [Query_Manager getBookmarked:currentUserID completion:^(NSArray * _Nonnull bookmarkList) {
+        if(bookmarkList)
         {
-//            self.arrayOfBookmarkedProducts = (NSMutableArray *) products;
-            [self.arrayOfBookmarkedProducts addObject:[products firstObject]];
+            self.arrayOfBookmarkedProducts = bookmarkList;
             [self.bookmarkCollectionView reloadData];
+            [self.refreshControl endRefreshing];
         }
-        
     }];
 }
 
@@ -78,11 +77,21 @@
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     BookmarkCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BookmarkCollectionViewCell" forIndexPath:indexPath];
-    Product *product = self.arrayOfBookmarkedProducts[indexPath.row];
-    cell.bookmarkCollectionProductLabel.text = product.name;
-    NSString *posterURLString = product.productImage;
+    PFObject *product = self.arrayOfBookmarkedProducts[indexPath.row];
+    cell.bookmarkCollectionProductLabel.text = product[@"name"];
+    
+    NSString *posterURLString = product[@"productImage"];
     NSURL *posterURL = [NSURL URLWithString:posterURLString];
     [cell.bookmarkCollectionImage setImageWithURL:posterURL];
+    
+    //UI Design
+    cell.layer.borderWidth=1.0f;
+    cell.layer.borderColor=[UIColor blackColor].CGColor;
+    
+//    cell.bookmarkCollectionProductLabel.text = product.name;
+//    NSString *posterURLString = product.productImage;
+//    NSURL *posterURL = [NSURL URLWithString:posterURLString];
+//    [cell.bookmarkCollectionImage setImageWithURL:posterURL];
     
     return cell;
 }

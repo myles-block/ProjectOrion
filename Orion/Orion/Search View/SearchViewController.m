@@ -7,9 +7,11 @@
 
 #import "SearchViewController.h"
 #import "SearchTableViewCell.h"
+#import "DetailsViewController.h"
 #import "APIManager.h"
 #import "UIImageview+AFNetworking.h"
 #import "Product.h"
+#import "DGActivityIndicatorView.h"
 
 @interface SearchViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *searchTableView;
@@ -17,6 +19,7 @@
 
 @property (strong, nonatomic) NSMutableArray *data;//array of products
 @property (strong, nonatomic) NSArray *filteredData;
+@property (strong, nonatomic) DGActivityIndicatorView *activityIndicatorView;
 
 @end
 
@@ -26,6 +29,19 @@
     [super viewDidLoad];
 //    self.title = @"Search";
     
+    //MARK: Activity Indicator Controls
+    self.activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallSpinFadeLoader tintColor:[UIColor blackColor] size:50.0f];//intializer
+    self.activityIndicatorView.frame = CGRectMake(0.0f, 0.0f, 50.0f, 50.0f);
+//    CGFloat width = self.view.bounds.size.width / 5.0f;
+//            CGFloat height = self.view.bounds.size.height / 7.0f;
+//    self.activityIndicatorView.frame = CGRectMake(width * (i % 7), height * (int)(i / 7), width, height);
+    
+    CGPoint center = CGPointMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0);//puts into center
+    self.activityIndicatorView.center = center;//sets to center
+    
+    [self.view addSubview:self.activityIndicatorView];
+    
+    
     
     self.searchTableView.delegate = self;
     self.searchTableView.dataSource = self;
@@ -34,23 +50,32 @@
 }
 
 - (void) fetchSearch: (NSString *)input {
+    [self.activityIndicatorView startAnimating];
     [[APIManager shared] getSearching:(input) completion:^(NSArray *products) {
         if (products) {
             NSLog(@"😎😎😎 Committed Search");
             self.data = (NSMutableArray *) products;//sets array of products to data array
             [self.searchTableView reloadData];
+            [self.activityIndicatorView stopAnimating];
         }}];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if([[segue identifier] isEqualToString:@"searchSegue"])
+    {
+        NSIndexPath *index = self.searchTableView.indexPathForSelectedRow;
+        Product *dataToPass = self.data[index.row];
+        DetailsViewController *detailVC = [segue destinationViewController];
+        detailVC.selectedProduct = dataToPass;
+    }
 }
-*/
+
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     SearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchCell" forIndexPath:indexPath];

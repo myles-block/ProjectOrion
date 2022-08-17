@@ -49,7 +49,7 @@
     
 }
 
-+ (void) saveProductToBookmark:(Product *)bookmarkedProduct :(NSString *)objectID withCompletion: (PFBooleanResultBlock _Nullable)completion {
++ (void) saveProductToBookmark:(Product *)bookmarkedProduct :(NSString *)objectID withCompletion: (PFBooleanResultBlock _Nullable)completion {//UNUSED!!!
     PFQuery *query = [PFQuery queryWithClassName:@"_User"];
     [query whereKey:@"objectId" equalTo:objectID];
     [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
@@ -72,14 +72,15 @@
     
 }
 
-+ (void) getBookmarked:(NSString *)objectID completion:(void(^)(NSMutableArray *bookmarkList))completion{
++ (void) getBookmarked:(NSString *)objectID completion:(void(^)(NSArray *bookmarkList))completion{
     PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+    [query includeKey:@"test_2"];
     [query whereKey:@"objectId" equalTo:objectID];
     [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
         if (users != nil) {
             // do something with the array of object returned by the call
             PFObject *thisUser = [users firstObject];
-            NSMutableArray *bookmarkList = (thisUser[@"bookmarkedTech"]);
+            NSMutableArray *bookmarkList = (thisUser[@"test_2"]);
             completion(bookmarkList);
 
         } else {
@@ -90,11 +91,35 @@
 }
 
 + (void) pushProductToBookmark:(Product *)bookmarkedProduct :(NSString *)objectID withCompletion: (PFBooleanResultBlock _Nullable)completion {
-    [[PFUser  currentUser] addObject:bookmarkedProduct forKey:@"test"];
-    [[PFUser currentUser] saveInBackground];
+    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+    [query includeKey:@"test_2"];
+    [query whereKey:@"objectId" equalTo:objectID];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
+        if (users != nil) {
+            // do something with the array of object returned by the call
+            PFObject *thisUser = [users firstObject];
+            NSArray *userChecks = (thisUser[@"test_2"]);
+            PFObject *pfBookmarkedProduct = [Product productToPFObject:bookmarkedProduct];
+            BOOL isTheObjectThere = [userChecks containsObject:pfBookmarkedProduct[@"objectID"]];
+            if(isTheObjectThere == NO)
+            {
+                [Product productToPFObject:bookmarkedProduct];
+                [[PFUser  currentUser] addObject:pfBookmarkedProduct forKey:@"test_2"];
+                [[PFUser currentUser] saveInBackground];
+            }
+
+        }
+        else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+//    PFObject *pfBookmarkedProduct = [Product productToPFObject:bookmarkedProduct];
+//    [Product productToPFObject:bookmarkedProduct];
+//    [[PFUser  currentUser] addObject:pfBookmarkedProduct forKey:@"test_2"];
+//    [[PFUser currentUser] saveInBackground];
 }
 //grab selected product, take it's values then upload to back4app when saved...then repull array from back4app
-//theory failed, continue try saving to background
+
 
 
 

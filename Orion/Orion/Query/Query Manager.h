@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void) saveProductToBookmark:(Product *)bookmarkedProduct :(NSString *)objectID withCompletion: (PFBooleanResultBlock _Nullable)completion;
 
-+ (void) getBookmarked:(NSString *)objectID completion:(void(^)(NSMutableArray *bookmarkList))completion;
++ (void) getBookmarked:(NSString *)objectID completion:(void(^)(NSArray *bookmarkList))completion;
 
 //test
 + (void) pushProductToBookmark:(Product *)bookmarkedProduct :(NSString *)objectID withCompletion: (PFBooleanResultBlock _Nullable)completion;

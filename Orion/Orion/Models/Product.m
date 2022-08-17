@@ -6,6 +6,7 @@
 //
 
 #import "Product.h"
+#import "APIManager.h"
 
 //TODO: Add dicitionary product method
 @implementation Product
@@ -17,7 +18,7 @@
 
 
 + (nonnull NSString *)parseClassName {
-    return @"Product";
+    return @"Product_2";
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
@@ -78,22 +79,41 @@
 
 - (instancetype)initWithProductSpecs:(NSDictionary *)dictionary :(Product *)product{
     self = product;
-    Product *new_product = [Product new];
+//    Product *new_product = [Product new];
     
     if(self) {
         //MARK: Back4App Declarations
-        new_product.name = self.name;
+//        new_product.name = self.name;
+//        new_product.productImage = self.productImage;
+//        new_product.productSKU = self.productSKU;
+//        new_product.productPrice = self.productPrice;
+        self.productDescription = dictionary[@"longDescription"];
+//        new_product.productDescription = self.productDescription;
+        NSNumber *price = dictionary[@"regularPrice"];
+        self.productPrice = [@"$" stringByAppendingString:[price stringValue]];
+        
+//        [new_product saveInBackground];
+    }
+    return self;
+    
+}
+
+- (PFObject *)initPFObjectConversion:(Product *)product {
+    self = product;
+    Product *new_product = [Product new];
+    
+    if(self) {
+        new_product[@"name"] = self.name;
         new_product.productImage = self.productImage;
         new_product.productSKU = self.productSKU;
         new_product.productPrice = self.productPrice;
+        new_product.productDescription = self.productDescription;
         
-        self.productDescription = dictionary[@"longDescription"];
-        NSNumber *price = dictionary[@"regularPrice"];
-        self.productPrice = [@"$" stringByAppendingString:[price stringValue]];
     }
-    [new_product saveInBackground];
-    return self;
-    
+//    [new_product saveInBackground];
+//    [[PFUser  currentUser] addObject:new_product forKey:@"test"];
+//    [[PFUser currentUser] saveInBackground];
+    return new_product;
 }
 
 
@@ -131,6 +151,12 @@
     }
     return products;
 }
+
++ (PFObject *)productToPFObject: (Product *)givenProduct {
+    PFObject *transferPFObject = [[Product alloc] initPFObjectConversion:givenProduct];
+    return transferPFObject;
+}
+
 
 //+ (Product *)detailProductAdditions: (Product *)sentProduct {
 //    

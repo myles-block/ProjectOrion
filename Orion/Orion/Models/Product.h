@@ -34,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSMutableArray *)productCreationviaSKU: (NSArray *)dictionaries;
 
++ (PFObject *)productToPFObject: (Product *)givenProduct;
+
 @end
 
 NS_ASSUME_NONNULL_END
