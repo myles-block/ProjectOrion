@@ -6,6 +6,7 @@
 //
 
 #import "CategorySpecificViewController.h"
+#import "DetailsViewController.h"
 #import "TypeSpecificCells.h"
 #import "UIImageview+AFNetworking.h"
 #import "APIManager.h"
@@ -42,15 +43,22 @@
         }}];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if([[segue identifier] isEqualToString:@"categorySegue"])
+    {
+        NSIndexPath *index = self.typeSpecificTableView.indexPathForSelectedRow;
+        Product *dataToPass = self.trendingProductsFetch[index.row];
+        DetailsViewController *detailVC = [segue destinationViewController];
+        detailVC.selectedProduct = dataToPass;
+    }
 }
-*/
+
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     TypeSpecificCells *cell = [tableView dequeueReusableCellWithIdentifier:@"TypeSpecificCells" forIndexPath:indexPath];

@@ -8,6 +8,7 @@ target 'Orion' do
   # Pods for Orion
   pod 'Parse'
   pod 'AFNetworking'
+  pod 'DGActivityIndicatorView'
 
   target 'OrionTests' do
     inherit! :search_paths

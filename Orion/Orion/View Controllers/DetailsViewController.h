@@ -13,9 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DetailsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *productImage;
 @property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *productDescription;
 @property (weak, nonatomic) IBOutlet UILabel *productPrice;
 @property (weak, nonatomic) IBOutlet UILabel *sku;
+@property (strong, nonatomic) IBOutlet UITextView *productDescriptionTextView;
 
 //HomeFeed SEGUE
 @property (nonatomic, strong) Product *selectedProduct;
